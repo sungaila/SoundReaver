@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Window x:Class="Sungaila.SoundReaver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="using:Sungaila.SoundReaver.Converters"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ext="using:Sungaila.SoundReaver.Extensions"
+        xmlns:local="using:Sungaila.SoundReaver"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:v="using:Sungaila.SoundReaver.Views"
+        xmlns:vm="using:Sungaila.SoundReaver.ViewModels"
+        Title="Sound Reaver"
+        mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <local:MicaTintedBackdrop Alpha="60" TintColor="{StaticResource AccentColorSpectral}" />
+    </Window.SystemBackdrop>
+
+    <Grid>
+        <Grid.Resources>
+            <c:NavigationViewDisplayModeToBoolConverter x:Key="NavigationViewDisplayModeToBoolConverter" />
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <v:AppTitleBar Title="{x:Bind Title, Mode=OneWay}" />
+
+        <NavigationView x:Name="NavView"
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        d:DataContext="{d:DesignInstance Type=vm:AppViewModel,
+                                                         IsDesignTimeCreatable=True}"
+                        BackRequested="NavView_BackRequested"
+                        CompactModeThresholdWidth="750"
+                        IsBackButtonVisible="Collapsed"
+                        IsPaneToggleButtonVisible="{Binding DisplayMode, RelativeSource={RelativeSource Self}, Mode=OneWay, Converter={StaticResource NavigationViewDisplayModeToBoolConverter}}"
+                        IsSettingsVisible="True"
+                        IsTabStop="False"
+                        Loaded="NavView_Loaded"
+                        OpenPaneLength="200"
+                        PaneDisplayMode="Auto"
+                        SelectionChanged="NavView_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:Uid="NavigationViewItem_MusicView"
+                                    Icon="Audio"
+                                    Tag="{ext:Type Type=v:MusicView}" />
+            </NavigationView.MenuItems>
+
+            <Frame x:Name="RootFrame" Grid.Row="1" />
+        </NavigationView>
+    </Grid>
+</Window>
