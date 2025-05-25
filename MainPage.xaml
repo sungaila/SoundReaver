@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page x:Class="Sungaila.SoundReaver.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:c="using:Sungaila.SoundReaver.Converters"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ext="using:Sungaila.SoundReaver.Extensions"
+      xmlns:i="using:Microsoft.Xaml.Interactivity"
+      xmlns:local="using:Sungaila.SoundReaver"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:sb="using:Microsoft.UI.Composition.SystemBackdrops"
+      xmlns:sys="using:System"
+      xmlns:vm="using:Sungaila.SoundReaver.ViewModels"
+      d:DataContext="{d:DesignInstance Type=vm:AppViewModel,
+                                       IsDesignTimeCreatable=True}"
+      Loaded="Page_Loaded"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <c:BoolReversedConverter x:Key="BoolReversedConverter" />
+        <c:BoolToSymbolConverter x:Key="BoolToPlaySymbolConverter"
+                                 False="Play"
+                                 True="Pause" />
+
+        <DataTemplate x:Key="TrackTemplate" x:DataType="vm:TrackViewModel">
+            <TreeViewItem Content="{x:Bind Name}" IsSelected="{x:Bind IsSelected, Mode=TwoWay}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="CategoryTemplate" x:DataType="vm:CategoryViewModel">
+            <TreeViewItem Content="{x:Bind Name}"
+                          IsExpanded="{x:Bind IsExpanded, Mode=TwoWay}"
+                          ItemsSource="{x:Bind Tracks}" />
+        </DataTemplate>
+
+        <ext:TreeViewDataTemplateSelector x:Key="TrackTemplateSelector"
+                                          CategoryTemplate="{StaticResource CategoryTemplate}"
+                                          TrackTemplate="{StaticResource TrackTemplate}" />
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TreeView x:Name="TracksTreeView"
+                  Grid.Row="0"
+                  AllowDrop="False"
+                  CanDrag="False"
+                  CanDragItems="False"
+                  CanReorderItems="False"
+                  ItemTemplateSelector="{StaticResource TrackTemplateSelector}"
+                  ItemsSource="{x:Bind Context.Categories, Mode=OneWay}"
+                  Loaded="TreeView_Loaded"
+                  SelectionChanged="TreeView_SelectionChanged"
+                  SelectionMode="Single" />
+
+        <Rectangle Grid.Row="1"
+                   Height="1"
+                   VerticalAlignment="Stretch"
+                   Fill="{ThemeResource SystemControlDisabledChromeHighBrush}" />
+
+        <Grid Grid.Row="2"
+              Padding="8"
+              Background="{ThemeResource ControlFillColorSecondary}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="CurrentTimeTextBlock"
+                           Grid.Column="0"
+                           Width="60"
+                           VerticalAlignment="Center"
+                           Text="00:00:00"
+                           TextAlignment="Left" />
+
+                <Slider x:Name="TimeSlider"
+                        Grid.Column="1"
+                        IsThumbToolTipEnabled="False"
+                        ValueChanged="TimeSlider_ValueChanged" />
+
+                <TextBlock x:Name="TotalTimeTextBlock"
+                           Grid.Column="2"
+                           Width="60"
+                           VerticalAlignment="Center"
+                           Text="00:00:00"
+                           TextAlignment="Right" />
+            </Grid>
+
+            <Grid Grid.Row="1" ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <ToggleButton x:Name="PlayButton"
+                              Grid.Column="0"
+                              Width="60"
+                              Height="60"
+                              Checked="PlayButton_Checked"
+                              IsChecked="{x:Bind Context.IsPlaying, Mode=TwoWay}"
+                              Unchecked="PlayButton_Unchecked">
+                    <SymbolIcon Symbol="{x:Bind PlayButton.IsChecked, Mode=OneWay, Converter={StaticResource BoolToPlaySymbolConverter}}" />
+                </ToggleButton>
+
+                <Button x:Name="StopButton"
+                        Grid.Column="1"
+                        Width="50"
+                        Height="50"
+                        Click="StopButton_Click">
+                    <SymbolIcon Symbol="Stop" />
+                </Button>
+
+                <ToggleButton x:Name="RepeatButton"
+                              Grid.Column="2"
+                              Width="50"
+                              Height="50"
+                              HorizontalAlignment="Right"
+                              IsChecked="{x:Bind Context.IsRepeating, Mode=TwoWay}">
+                    <SymbolIcon Symbol="RepeatOne" />
+                </ToggleButton>
+
+                <Button Grid.Column="4"
+                        Width="50"
+                        Height="50"
+                        Style="{ThemeResource EllipsisButton}">
+                    <SymbolIcon Symbol="Volume" />
+                    <Button.Flyout>
+                        <Flyout>
+                            <Slider x:Name="VolumeSlider"
+                                    Width="150"
+                                    Maximum="100"
+                                    Minimum="0"
+                                    StepFrequency="1"
+                                    ToolTipService.ToolTip="Volume"
+                                    ValueChanged="VolumeSlider_ValueChanged"
+                                    Value="60" />
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+
+                <Viewbox Grid.Column="5" Height="50">
+                    <ToggleSwitch MinWidth="110"
+                                  MaxWidth="110"
+                                  IsOn="{x:Bind Context.IsMaterial, Mode=TwoWay}"
+                                  OffContent="Spectral"
+                                  OnContent="Material"
+                                  Toggled="ToggleSwitch_Toggled" />
+                </Viewbox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
