@@ -1,10 +1,7 @@
 {
   "profiles": {
-    "SoundReaver (Package)": {
+    "SoundReaver": {
       "commandName": "MsixPackage"
-    },
-    "SoundReaver (Unpackaged)": {
-      "commandName": "Project"
     }
   }
 }

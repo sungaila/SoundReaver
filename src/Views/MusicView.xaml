@@ -91,7 +91,9 @@
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <HyperlinkButton x:Uid="NoCategoriesRefreshHyperlinkButton" Click="RefreshHyperlinkButton_Click" />
-                <HyperlinkButton x:Uid="NoCategoriesSettingsHyperlinkButton" Click="SettingsHyperlinkButton_Click" />
+                <HyperlinkButton x:Uid="NoCategoriesSettingsHyperlinkButton"
+                                 Click="SettingsHyperlinkButton_Click"
+                                 Style="{StaticResource ExternalHyperlinkStyle}" />
             </StackPanel>
         </StackPanel>
 

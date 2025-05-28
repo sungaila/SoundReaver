@@ -11,7 +11,6 @@ namespace Sungaila.SoundReaver
         public App()
         {
             InitializeComponent();
-
             HandlePrimaryLanguageOverride();
         }
 

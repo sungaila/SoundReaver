@@ -178,7 +178,7 @@
     <value>Soundtrack</value>
   </data>
   <data name="LicensesTextBlock.Text" xml:space="preserve">
-    <value>Licenses</value>
+    <value>Third-Party Content Used with Permission</value>
   </data>
   <data name="NavigationViewItem_MusicView.Content" xml:space="preserve">
     <value>Tracks</value>

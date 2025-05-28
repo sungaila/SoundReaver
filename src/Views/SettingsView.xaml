@@ -32,7 +32,6 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
@@ -84,23 +83,27 @@
                        Grid.Row="11"
                        IsTextSelectionEnabled="True" />
 
-            <HyperlinkButton x:Name="GitHubHyperlinkButton"
-                             x:Uid="GitHubHyperlinkButton"
-                             Grid.Row="13"
-                             NavigateUri="https://github.com/sungaila/SoundReaver"
-                             ToolTipService.ToolTip="{x:Bind GitHubHyperlinkButton.NavigateUri, Mode=OneTime}" />
+            <controls:WrapPanel Grid.Row="13"
+                                HorizontalSpacing="5"
+                                Orientation="Horizontal">
+                <HyperlinkButton x:Name="GitHubHyperlinkButton"
+                                 x:Uid="GitHubHyperlinkButton"
+                                 NavigateUri="https://github.com/sungaila/SoundReaver"
+                                 Style="{StaticResource ExternalHyperlinkStyle}"
+                                 ToolTipService.ToolTip="{x:Bind GitHubHyperlinkButton.NavigateUri, Mode=OneTime}" />
 
-            <HyperlinkButton x:Name="SungailaHyperlinkButton"
-                             x:Uid="SungailaHyperlinkButton"
-                             Grid.Row="14"
-                             NavigateUri="https://www.sungaila.de"
-                             ToolTipService.ToolTip="{x:Bind SungailaHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                <HyperlinkButton x:Name="SungailaHyperlinkButton"
+                                 x:Uid="SungailaHyperlinkButton"
+                                 NavigateUri="https://www.sungaila.de"
+                                 Style="{StaticResource ExternalHyperlinkStyle}"
+                                 ToolTipService.ToolTip="{x:Bind SungailaHyperlinkButton.NavigateUri, Mode=OneTime}" />
+            </controls:WrapPanel>
 
             <TextBlock x:Uid="LicensesTextBlock"
-                       Grid.Row="16"
+                       Grid.Row="15"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
-            <ListView Grid.Row="18"
+            <ListView Grid.Row="17"
                       CanDragItems="False"
                       CanReorderItems="False"
                       SelectionMode="Single">
@@ -119,11 +122,13 @@
                                                  x:Uid="LicenseAppIconAboutHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.deviantart.com/convalise/about"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
                                                  ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseAppIconGalleryHyperlinkButton"
                                                  x:Uid="LicenseAppIconGalleryHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.deviantart.com/convalise/gallery/29182860/legacy-of-kain"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
                                                  ToolTipService.ToolTip="{x:Bind LicenseAppIconGalleryHyperlinkButton.NavigateUri, Mode=OneTime}" />
                             </controls:WrapPanel>
                         </StackPanel>
@@ -146,21 +151,25 @@
                                                  x:Uid="LicenseSoundtrackGitHub1HyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://github.com/DeeDyne"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
                                                  ToolTipService.ToolTip="{x:Bind LicenseSoundtrackGitHub1HyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseSoundtrackGitHub2HyperlinkButton"
                                                  x:Uid="LicenseSoundtrackGitHub2HyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://github.com/SalsaGal"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
                                                  ToolTipService.ToolTip="{x:Bind LicenseSoundtrackGitHub2HyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseSoundtrackDenHyperlinkButton"
                                                  x:Uid="LicenseSoundtrackDenHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.theancientsden.com/soundtracks"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
                                                  ToolTipService.ToolTip="{x:Bind LicenseSoundtrackDenHyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseSoundtrackDriveHyperlinkButton"
                                                  x:Uid="LicenseSoundtrackDriveHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://drive.google.com/drive/folders/122vxTNvSeytTAd8_j3jalggBEX2RP1RK"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
                                                  ToolTipService.ToolTip="{x:Bind LicenseSoundtrackDriveHyperlinkButton.NavigateUri, Mode=OneTime}" />
                             </controls:WrapPanel>
                         </StackPanel>

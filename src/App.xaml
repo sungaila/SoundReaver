@@ -14,6 +14,21 @@
             <!--  Other app resources here  -->
             <ui:Color x:Key="AccentColorSpectral">#FF40FF50</ui:Color>
             <ui:Color x:Key="AccentColorMaterial">#FF7580FF</ui:Color>
+
+            <Style x:Key="ExternalHyperlinkStyle"
+                   BasedOn="{StaticResource DefaultHyperlinkButtonStyle}"
+                   TargetType="HyperlinkButton">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Spacing="8">
+                                <TextBlock Text="{Binding}" />
+                                <FontIcon FontSize="12" Glyph="&#xE8A7;" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

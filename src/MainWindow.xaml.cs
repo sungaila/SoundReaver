@@ -3,7 +3,6 @@ using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.Windows.BadgeNotifications;
 using Sungaila.SoundReaver.ViewModels;
 using System;
 using System.Drawing;
@@ -34,8 +33,6 @@ namespace Sungaila.SoundReaver
                 presenter.PreferredMinimumWidth = 650;
                 presenter.PreferredMinimumHeight = 600;
             }
-
-            BadgeNotificationManager.Current.ClearBadge();
         }
     }
 }

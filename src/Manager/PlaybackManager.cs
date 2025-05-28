@@ -1,5 +1,4 @@
-﻿using Microsoft.Windows.BadgeNotifications;
-using Sungaila.SoundReaver.ViewModels;
+﻿using Sungaila.SoundReaver.ViewModels;
 using System;
 using System.Threading.Tasks;
 using Windows.Media.Core;
@@ -67,8 +66,6 @@ namespace Sungaila.SoundReaver.Manager
             _materialMediaPlayer.Position = TimeSpan.Zero;
 
             _lastPosition = _spectralMediaPlayer.Position;
-
-            BadgeNotificationManager.Current.ClearBadge();
         }
 
         public static async Task PauseTrack()
@@ -79,8 +76,6 @@ namespace Sungaila.SoundReaver.Manager
             _materialMediaPlayer.Pause();
 
             _lastPosition = _spectralMediaPlayer.Position;
-
-            BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Paused);
         }
 
         private static TimeSpan _lastPosition = TimeSpan.Zero;
@@ -162,8 +157,6 @@ namespace Sungaila.SoundReaver.Manager
 
             _spectralMediaPlayer.Play();
             _materialMediaPlayer.Play();
-
-            BadgeNotificationManager.Current.SetBadgeAsGlyph(BadgeNotificationGlyph.Playing);
         }
 
         public static void SetIsLoopingEnabled(bool value)
