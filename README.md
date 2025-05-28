@@ -6,3 +6,5 @@ Plays the soundtrack of [Legacy of Kain: Soul Reaver](https://en.wikipedia.org/w
 The soundtrack was composed by [Kurt Harland](https://en.wikipedia.org/wiki/Kurt_Harland) and remastered by [DeeDyne](https://github.com/DeeDyne) & [SalsaGal](https://github.com/SalsaGal). This app only contains titles that are available in both the spectral and material variants.
 
 [The work](https://www.deviantart.com/convalise/gallery/29182860/legacy-of-kain) of [Conrado (convalise)](https://www.deviantart.com/convalise/about) was used for the app and package icons.
+
+[Sound Reaver](https://github.com/user-attachments/assets/22a51ead-f7d8-4609-abbf-b8947c9513eb)
