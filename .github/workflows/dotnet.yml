@@ -36,11 +36,13 @@ jobs:
         uses: actions/setup-dotnet@main
         with:
           dotnet-version: 9.x
-          dotnet-quality: 'preview'
+          dotnet-quality: 'ga'
       - name: Setup Windows 11 SDK (10.0.26100.0)
         uses: GuillaumeFalourd/setup-windows10-sdk-action@main
         with:
             sdk-version: 26100
+      - name: Setup workloads
+        run: dotnet workload restore
       - name: Restore
         run: dotnet restore SoundReaver.sln
       - name: Build
