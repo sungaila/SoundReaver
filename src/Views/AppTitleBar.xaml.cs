@@ -1,3 +1,4 @@
+using CommunityToolkit.WinUI;
 using Microsoft.UI.Xaml.Controls;
 
 namespace Sungaila.SoundReaver.Views
@@ -16,7 +17,10 @@ namespace Sungaila.SoundReaver.Views
             if (App.MainWindow == null)
                 return;
 
-            App.MainWindow.NavigationView.IsPaneOpen = !App.MainWindow.NavigationView.IsPaneOpen;
+            if (App.MainWindow.Content.FindDescendant<NavigationView>() is not NavigationView navigationView)
+                return;
+
+            navigationView.IsPaneOpen = !navigationView.IsPaneOpen;
         }
     }
 }

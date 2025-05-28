@@ -68,6 +68,7 @@ namespace Sungaila.SoundReaver.Views
                 return;
 
             Data.CurrentTrack = track;
+            UpdateTrackPositionControls(false);
 
             if (!PlaybackManager.IsPlaying)
                 return;
@@ -76,11 +77,6 @@ namespace Sungaila.SoundReaver.Views
             await PlaybackManager.PlayTrack(track, Data.IsMaterial);
             UpdateTrackPositionControls(false);
             _positionTimer.Start();
-        }
-
-        private void PlayButton_Loaded(object sender, RoutedEventArgs e)
-        {
-            PlayButton.IsChecked = PlaybackManager.IsPlaying;
         }
 
         private async void PlayButton_Checked(object sender, RoutedEventArgs e)
@@ -153,6 +149,8 @@ namespace Sungaila.SoundReaver.Views
             try
             {
                 _isUpdatingTrackPositionControls = true;
+
+                PlayButton.IsEnabled = Data.CurrentTrack != null;
 
                 if (isTimerUpdate)
                     PlayButton.IsChecked = PlaybackManager.IsPlaying;

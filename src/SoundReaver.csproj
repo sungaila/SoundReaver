@@ -31,18 +31,10 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <None Remove="MainPage.xaml" />
-    <None Remove="Views\AppTitleBar.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Sounds\raziel-0026.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Sounds\raziel-0062.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Music\**\*.*">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -68,16 +60,6 @@
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.0" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
     <PackageReference Include="System.Drawing.Common" Version="9.0.5" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\AppTitleBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
 
   <!--

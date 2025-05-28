@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Page x:Class="Sungaila.SoundReaver.Views.MainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:c="using:Sungaila.SoundReaver.Converters"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:ext="using:Sungaila.SoundReaver.Extensions"
+      xmlns:local="using:Sungaila.SoundReaver.Views"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:vm="using:Sungaila.SoundReaver.ViewModels"
+      mc:Ignorable="d">
+    <Page.Resources>
+        <c:NavigationViewDisplayModeToBoolConverter x:Key="NavigationViewDisplayModeToBoolConverter" />
+    </Page.Resources>
+
+    <NavigationView x:Name="NavView"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    d:DataContext="{d:DesignInstance Type=vm:AppViewModel,
+                                                     IsDesignTimeCreatable=True}"
+                    BackRequested="NavView_BackRequested"
+                    CompactModeThresholdWidth="750"
+                    IsBackButtonVisible="Collapsed"
+                    IsPaneToggleButtonVisible="{x:Bind NavView.DisplayMode, Mode=OneWay, Converter={StaticResource NavigationViewDisplayModeToBoolConverter}}"
+                    IsSettingsVisible="True"
+                    IsTabStop="False"
+                    Loaded="NavView_Loaded"
+                    OpenPaneLength="200"
+                    PaneDisplayMode="Auto"
+                    SelectionChanged="NavView_SelectionChanged">
+        <NavigationView.MenuItems>
+            <NavigationViewItem x:Uid="NavigationViewItem_MusicView"
+                                Icon="Audio"
+                                Tag="{ext:Type Type=local:MusicView}" />
+        </NavigationView.MenuItems>
+
+        <Frame x:Name="RootFrame" Grid.Row="1" />
+    </NavigationView>
+</Page>

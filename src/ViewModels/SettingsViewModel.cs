@@ -3,11 +3,9 @@ using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using Windows.Globalization;
-using WinRT;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
-    [GeneratedBindableCustomProperty]
     public partial class SettingsViewModel : ViewModel
     {
         private LanguageViewModel _selectedLanguage = new CultureInfo(ApplicationLanguages.PrimaryLanguageOverride);

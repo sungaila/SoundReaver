@@ -154,7 +154,6 @@
                               Width="60"
                               Height="60"
                               Checked="PlayButton_Checked"
-                              Loaded="PlayButton_Loaded"
                               Unchecked="PlayButton_Unchecked">
                     <SymbolIcon Symbol="{x:Bind PlayButton.IsChecked, Mode=OneWay, Converter={StaticResource BoolToPlaySymbolConverter}}" />
 

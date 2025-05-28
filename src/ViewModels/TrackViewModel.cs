@@ -16,7 +16,7 @@ namespace Sungaila.SoundReaver.ViewModels
 
         public bool IsSelected
         {
-            get => App.MainWindow?.NavigationView?.DataContext is AppViewModel viewModel && viewModel.CurrentTrack == this;
+            get => App.MainWindow?.Data is AppViewModel viewModel && viewModel.CurrentTrack == this;
         }
 
         public void OnIsSelectedChanged() => OnPropertyChanged(nameof(IsSelected));

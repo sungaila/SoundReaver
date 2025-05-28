@@ -1,9 +1,7 @@
 ﻿using System.Globalization;
-using WinRT;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
-    [GeneratedBindableCustomProperty]
     public partial class LanguageViewModel(string ietfLanguageTag, string nativeName) : ViewModel
     {
         public string IetfLanguageTag { get; } = ietfLanguageTag;

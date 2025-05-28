@@ -3,6 +3,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="using:Sungaila.SoundReaver"
+             xmlns:ui="using:Windows.UI"
              RequestedTheme="Light">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,8 +12,8 @@
                 <!--  Other merged dictionaries here  -->
             </ResourceDictionary.MergedDictionaries>
             <!--  Other app resources here  -->
-            <Color x:Key="AccentColorSpectral">#FF40FF50</Color>
-            <Color x:Key="AccentColorMaterial">#FF7580FF</Color>
+            <ui:Color x:Key="AccentColorSpectral">#FF40FF50</ui:Color>
+            <ui:Color x:Key="AccentColorMaterial">#FF7580FF</ui:Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

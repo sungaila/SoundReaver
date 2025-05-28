@@ -48,9 +48,14 @@
                                    Grid.Row="2"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xF2B7;}">
                 <ComboBox Width="200"
-                          DisplayMemberPath="NativeName"
                           ItemsSource="{x:Bind Data.Settings.AvailableLanguages}"
-                          SelectedItem="{x:Bind Data.Settings.SelectedLanguage, Mode=TwoWay}" />
+                          SelectedItem="{x:Bind Data.Settings.SelectedLanguage, Mode=TwoWay}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate x:DataType="v:LanguageViewModel">
+                            <TextBlock Text="{x:Bind NativeName}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
             </controls:SettingsCard>
 
             <controls:SettingsCard x:Uid="IsShiftSoundEnabledSettingsCard"
@@ -79,15 +84,17 @@
                        Grid.Row="11"
                        IsTextSelectionEnabled="True" />
 
-            <HyperlinkButton x:Uid="GitHubHyperlinkButton"
+            <HyperlinkButton x:Name="GitHubHyperlinkButton"
+                             x:Uid="GitHubHyperlinkButton"
                              Grid.Row="13"
                              NavigateUri="https://github.com/sungaila/SoundReaver"
-                             ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
+                             ToolTipService.ToolTip="{x:Bind GitHubHyperlinkButton.NavigateUri, Mode=OneTime}" />
 
-            <HyperlinkButton x:Uid="SungailaHyperlinkButton"
+            <HyperlinkButton x:Name="SungailaHyperlinkButton"
+                             x:Uid="SungailaHyperlinkButton"
                              Grid.Row="14"
                              NavigateUri="https://www.sungaila.de"
-                             ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
+                             ToolTipService.ToolTip="{x:Bind SungailaHyperlinkButton.NavigateUri, Mode=OneTime}" />
 
             <TextBlock x:Uid="LicensesTextBlock"
                        Grid.Row="16"
@@ -108,14 +115,16 @@
                             </controls:WrapPanel>
 
                             <controls:WrapPanel HorizontalSpacing="5" Orientation="Horizontal">
-                                <HyperlinkButton x:Uid="LicenseAppIconAboutHyperlinkButton"
+                                <HyperlinkButton x:Name="LicenseAppIconAboutHyperlinkButton"
+                                                 x:Uid="LicenseAppIconAboutHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.deviantart.com/convalise/about"
-                                                 ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
-                                <HyperlinkButton x:Uid="LicenseAppIconGalleryHyperlinkButton"
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                <HyperlinkButton x:Name="LicenseAppIconGalleryHyperlinkButton"
+                                                 x:Uid="LicenseAppIconGalleryHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.deviantart.com/convalise/gallery/29182860/legacy-of-kain"
-                                                 ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconGalleryHyperlinkButton.NavigateUri, Mode=OneTime}" />
                             </controls:WrapPanel>
                         </StackPanel>
                     </ListViewItem>
@@ -133,22 +142,26 @@
                             </controls:WrapPanel>
 
                             <controls:WrapPanel HorizontalSpacing="5" Orientation="Horizontal">
-                                <HyperlinkButton x:Uid="LicenseSoundtrackGitHub1HyperlinkButton"
+                                <HyperlinkButton x:Name="LicenseSoundtrackGitHub1HyperlinkButton"
+                                                 x:Uid="LicenseSoundtrackGitHub1HyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://github.com/DeeDyne"
-                                                 ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
-                                <HyperlinkButton x:Uid="LicenseSoundtrackGitHub2HyperlinkButton"
+                                                 ToolTipService.ToolTip="{x:Bind LicenseSoundtrackGitHub1HyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                <HyperlinkButton x:Name="LicenseSoundtrackGitHub2HyperlinkButton"
+                                                 x:Uid="LicenseSoundtrackGitHub2HyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://github.com/SalsaGal"
-                                                 ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
-                                <HyperlinkButton x:Uid="LicenseSoundtrackDenHyperlinkButton"
+                                                 ToolTipService.ToolTip="{x:Bind LicenseSoundtrackGitHub2HyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                <HyperlinkButton x:Name="LicenseSoundtrackDenHyperlinkButton"
+                                                 x:Uid="LicenseSoundtrackDenHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.theancientsden.com/soundtracks"
-                                                 ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
-                                <HyperlinkButton x:Uid="LicenseSoundtrackDriveHyperlinkButton"
+                                                 ToolTipService.ToolTip="{x:Bind LicenseSoundtrackDenHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                <HyperlinkButton x:Name="LicenseSoundtrackDriveHyperlinkButton"
+                                                 x:Uid="LicenseSoundtrackDriveHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://drive.google.com/drive/folders/122vxTNvSeytTAd8_j3jalggBEX2RP1RK"
-                                                 ToolTipService.ToolTip="{Binding NavigateUri, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
+                                                 ToolTipService.ToolTip="{x:Bind LicenseSoundtrackDriveHyperlinkButton.NavigateUri, Mode=OneTime}" />
                             </controls:WrapPanel>
                         </StackPanel>
                     </ListViewItem>
