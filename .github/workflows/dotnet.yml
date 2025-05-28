@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_configuration:
+        type: choice
+        description: Build configuration
+        options: 
+        - Debug
+        - Release
+        required: true
+        default: 'Debug'
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    if: (github.event_name != 'workflow_dispatch' && true || inputs.run_build) == true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          fetch-depth: 0
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@main
+        with:
+          msbuild-architecture: x64
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@main
+        with:
+          dotnet-version: 9.x
+          dotnet-quality: 'preview'
+      - name: Setup Windows 11 SDK (10.0.26100.0)
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@main
+        with:
+            sdk-version: 26100
+      - name: Restore
+        run: dotnet restore SoundReaver.sln
+      - name: Build
+        run: dotnet build SoundReaver.sln --configuration ${{ github.event_name != 'workflow_dispatch' && 'Debug' || inputs.build_configuration }} --no-restore -p:VersionSuffix=ci
