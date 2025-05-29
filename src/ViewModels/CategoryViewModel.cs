@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.UI.Xaml.Media;
 using System.Collections.ObjectModel;
 
 namespace Sungaila.SoundReaver.ViewModels
@@ -7,6 +8,9 @@ namespace Sungaila.SoundReaver.ViewModels
     {
         [ObservableProperty]
         public required partial string Name { get; set; }
+
+        [ObservableProperty]
+        public partial ImageSource? Logo { get; set; }
 
         [ObservableProperty]
         public partial bool IsExpanded { get; set; }

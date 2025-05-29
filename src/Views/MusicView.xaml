@@ -17,6 +17,12 @@
       Unloaded="Page_Unloaded"
       mc:Ignorable="d">
     <Page.Resources>
+        <AcrylicBrush x:Key="LogoAcrylicBrush"
+                      AlwaysUseFallback="False"
+                      FallbackColor="Black"
+                      TintColor="Black"
+                      TintOpacity="0.95" />
+
         <c:BoolReversedConverter x:Key="BoolReversedConverter" />
         <c:BoolToFontWeightBoldConverter x:Key="BoolToFontWeightBoldConverter" />
         <c:CountToVisibilityConverter x:Key="CountToVisibilityConverter" />
@@ -26,15 +32,29 @@
         <c:DoubleToTimeSpanFormattedConverter x:Key="DoubleToTimeSpanFormattedConverter" />
 
         <DataTemplate x:Key="TrackTemplate" x:DataType="vm:TrackViewModel">
-            <TreeViewItem Content="{x:Bind Name}"
+            <TreeViewItem Content="{x:Bind Name, Mode=OneWay}"
                           FontWeight="{x:Bind IsSelected, Mode=OneWay, Converter={StaticResource BoolToFontWeightBoldConverter}}"
                           IsSelected="{x:Bind IsSelected, Mode=OneWay}" />
         </DataTemplate>
 
         <DataTemplate x:Key="CategoryTemplate" x:DataType="vm:CategoryViewModel">
-            <TreeViewItem Content="{x:Bind Name}"
+            <TreeViewItem DoubleTapped="TreeViewItem_DoubleTapped"
+                          GlyphSize="16"
                           IsExpanded="{x:Bind IsExpanded, Mode=TwoWay}"
-                          ItemsSource="{x:Bind Tracks}" />
+                          ItemsSource="{x:Bind Tracks}"
+                          Loaded="TreeViewItem_Loaded">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Grid>
+                        <Ellipse Fill="{StaticResource LogoAcrylicBrush}" />
+                        <Image Width="48"
+                               Height="48"
+                               VerticalAlignment="Center"
+                               Source="{x:Bind Logo, Mode=OneWay}"
+                               Stretch="UniformToFill" />
+                    </Grid>
+                    <TextBlock VerticalAlignment="Center" Text="{x:Bind Name, Mode=OneWay}" />
+                </StackPanel>
+            </TreeViewItem>
         </DataTemplate>
 
         <ext:TreeViewDataTemplateSelector x:Key="TrackTemplateSelector"

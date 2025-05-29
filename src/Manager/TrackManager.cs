@@ -1,9 +1,12 @@
-﻿using Sungaila.SoundReaver.ViewModels;
+﻿using Microsoft.UI.Xaml.Media.Imaging;
+using Sungaila.SoundReaver.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
+using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Search;
 
@@ -12,9 +15,9 @@ namespace Sungaila.SoundReaver.Manager
     public static class TrackManager
     {
         private static bool _initialized = false;
-        private static readonly Dictionary<string, List<StorageFile>> _files = [];
+        private static readonly Dictionary<Package, List<StorageFile>> _files = [];
 
-        public static IReadOnlyDictionary<string, List<StorageFile>> Files => _files.AsReadOnly();
+        public static IReadOnlyDictionary<Package, List<StorageFile>> Files => _files.AsReadOnly();
 
         public static async Task EnsureInitializedAsync()
         {
@@ -40,7 +43,7 @@ namespace Sungaila.SoundReaver.Manager
                     {
                         var folder = await pack.InstalledLocation.GetFolderAsync("Tracks");
                         var files = await folder.GetFilesAsync(CommonFileQuery.OrderByName);
-                        _files.Add(pack.Id.Name, [.. files.Where(f => f.FileType.Equals(".ogg", StringComparison.OrdinalIgnoreCase))]);
+                        _files.Add(pack, [.. files.Where(f => f.FileType.Equals(".ogg", StringComparison.OrdinalIgnoreCase))]);
                     }
                     catch { }
                 }
@@ -59,11 +62,15 @@ namespace Sungaila.SoundReaver.Manager
             {
                 StorageFile? GetFile(string fileName) => pair.Value.SingleOrDefault(f => f.Name.Equals(fileName, StringComparison.OrdinalIgnoreCase));
 
-                if (pair.Key == "Sungaila.SoundReaver.Music.Underworld")
+                var logoFolder = await pair.Key.InstalledLocation.TryGetItemAsync("Assets") as StorageFolder;
+                var logoBitmap = logoFolder != null ? await CreateBitmapFromLogoAsync(await logoFolder.TryGetItemAsync("StoreLogo.png") as StorageFile) : null;
+
+                if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.Underworld")
                 {
                     yield return new()
                     {
                         Name = "Underworld",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 002 - Underworld.ogg"), Spectral = GetFile("1 - 013 - Underworld [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 003 - Underworld [Suspense].ogg"), Spectral = GetFile("1 - 014 - Underworld [Spectral - Suspense].ogg") },
@@ -79,11 +86,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.RazielsStronghold")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.RazielsStronghold")
                 {
                     yield return new()
                     {
                         Name = "Raziel’s Stronghold",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 025 - Raziel's Stronghold.ogg"), Spectral = GetFile("1 - 032 - Raziel's Stronghold [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 026 - Raziel's Stronghold [Suspense].ogg"), Spectral = GetFile("1 - 033 - Raziel's Stronghold [Spectral - Suspense].ogg") },
@@ -95,11 +103,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.Necropolis")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.Necropolis")
                 {
                     yield return new()
                     {
                         Name = "Necropolis",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 039 - Necropolis.ogg"), Spectral = GetFile("1 - 052 - Necropolis [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 040 - Necropolis [Suspense].ogg"), Spectral = GetFile("1 - 053 - Necropolis [Spectral - Suspense].ogg") },
@@ -109,11 +118,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.SilencedCathedral")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.SilencedCathedral")
                 {
                     yield return new()
                     {
                         Name = "Silenced Cathedral",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 065 - Silenced Cathedral.ogg"), Spectral = GetFile("1 - 076 - Silenced Cathedral [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 066 - Silenced Cathedral [Suspense].ogg"), Spectral = GetFile("1 - 077 - Silenced Cathedral [Spectral - Suspense].ogg") },
@@ -126,11 +136,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.HumanCitadel")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.HumanCitadel")
                 {
                     yield return new()
                     {
                         Name = "Human Citadel",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 087 - Human Citadel.ogg"), Spectral = GetFile("1 - 099 - Human Citadel [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 088 - Human Citadel [Suspense].ogg"), Spectral = GetFile("1 - 100 - Human Citadel [Spectral - Suspense].ogg") },
@@ -144,11 +155,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.SarafanTomb")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.SarafanTomb")
                 {
                     yield return new()
                     {
                         Name = "Sarafan Tomb",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 111 - Sarafan Tomb.ogg"), Spectral = GetFile("1 - 123 - Sarafan Tomb [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 112 - Sarafan Tomb [Suspense].ogg"), Spectral = GetFile("1 - 124 - Sarafan Tomb [Spectral - Suspense].ogg") },
@@ -162,11 +174,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.DrownedAbbey")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.DrownedAbbey")
                 {
                     yield return new()
                     {
                         Name = "Drowned Abbey",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 134 - Drowned Abbey.ogg"), Spectral = GetFile("1 - 144 - Drowned Abbey [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 135 - Drowned Abbey [Suspense].ogg"), Spectral = GetFile("1 - 145 - Drowned Abbey [Spectral - Suspense].ogg") },
@@ -179,11 +192,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.RuinedCity")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.RuinedCity")
                 {
                     yield return new()
                     {
                         Name = "Ruined City",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 156 - Ruined City.ogg"), Spectral = GetFile("1 - 163 - Ruined City [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 157 - Ruined City [Suspense].ogg"), Spectral = GetFile("1 - 164 - Ruined City [Spectral - Suspense].ogg") },
@@ -193,11 +207,12 @@ namespace Sungaila.SoundReaver.Manager
                         ]
                     };
                 }
-                else if (pair.Key == "Sungaila.SoundReaver.Music.TheLighthouse")
+                else if (pair.Key.Id.Name == "Sungaila.SoundReaver.Music.TheLighthouse")
                 {
                     yield return new()
                     {
                         Name = "The Lighthouse",
+                        Logo = logoBitmap,
                         Tracks = [
                             new() { Name = "Normal", Material = GetFile("1 - 169 - The Lighthouse.ogg"), Spectral = GetFile("1 - 181 - The Lighthouse [Spectral].ogg") },
                             new() { Name = "Suspense", Material = GetFile("1 - 170 - The Lighthouse [Suspense].ogg"), Spectral = GetFile("1 - 182 - The Lighthouse [Spectral - Suspense].ogg") },
@@ -211,6 +226,39 @@ namespace Sungaila.SoundReaver.Manager
                     };
                 }
             }
+        }
+
+        private static async Task<WriteableBitmap?> CreateBitmapFromLogoAsync(StorageFile? logo)
+        {
+            if (logo == null)
+                return null;
+
+            using var stream = await logo.OpenAsync(FileAccessMode.Read);
+
+            var decoder = await BitmapDecoder.CreateAsync(stream);
+            var pixelData = await decoder.GetPixelDataAsync();
+
+            byte[] pixels = pixelData.DetachPixelData();
+            uint width = decoder.PixelWidth;
+            uint height = decoder.PixelHeight;
+
+            for (int i = 0; i < pixels.Length; i += 4)
+            {
+                byte b = pixels[i + 0];
+                byte g = pixels[i + 1];
+                byte r = pixels[i + 2];
+
+                if (r <= 0 && g == 0 && b == 0)
+                {
+                    pixels[i + 3] = 0;
+                }
+            }
+
+            var bitmap = new WriteableBitmap((int)width, (int)height);
+            using var wbStream = bitmap.PixelBuffer.AsStream();
+            await wbStream.WriteAsync(pixels);
+
+            return bitmap;
         }
     }
 }

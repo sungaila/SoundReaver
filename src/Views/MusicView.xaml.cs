@@ -2,6 +2,7 @@ using CommunityToolkit.WinUI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Shapes;
 using Sungaila.SoundReaver.Manager;
 using Sungaila.SoundReaver.ViewModels;
 using System;
@@ -182,6 +183,35 @@ namespace Sungaila.SoundReaver.Views
                 : Math.Min(PositionSlider.Maximum, PositionSlider.Value + PositionSlider.StepFrequency * 5);
 
             e.Handled = true;
+        }
+
+        private void TreeViewItem_DoubleTapped(object sender, Microsoft.UI.Xaml.Input.DoubleTappedRoutedEventArgs e)
+        {
+            if (sender is not TreeViewItem treeViewItem || treeViewItem.DataContext is not CategoryViewModel category)
+                return;
+
+            category.IsExpanded = !category.IsExpanded;
+        }
+
+        private void TreeViewItem_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is not TreeViewItem item)
+                return;
+
+            if (item.FindDescendant<TextBlock>(b => b.Name == "CollapsedGlyph") is TextBlock collapsed &&
+                item.FindDescendant<TextBlock>(b => b.Name == "ExpandedGlyph") is TextBlock expanded)
+            {
+                collapsed.Width = 18;
+                collapsed.Height = 18;
+
+                expanded.Width = collapsed.Width;
+                expanded.Height = collapsed.Height;
+            }
+
+            if (item.FindDescendant<Rectangle>(b => b.Name == "SelectionIndicator") is Rectangle indicator)
+            {
+                indicator.Height = 48;
+            }
         }
     }
 }
