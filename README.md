@@ -7,4 +7,4 @@ The soundtrack was composed by [Kurt Harland](https://en.wikipedia.org/wiki/Kurt
 
 [The work](https://www.deviantart.com/convalise/gallery/29182860/legacy-of-kain) of [Conrado (convalise)](https://www.deviantart.com/convalise/about) was used for the app and package icons.
 
-[Sound Reaver](https://github.com/user-attachments/assets/22a51ead-f7d8-4609-abbf-b8947c9513eb)
+[Sound Reaver](https://github.com/user-attachments/assets/b7b9baf7-dc1e-489d-b8a9-fff9e2c22532)
