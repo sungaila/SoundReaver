@@ -5,7 +5,6 @@
       xmlns:c="using:Sungaila.SoundReaver.Converters"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:ext="using:Sungaila.SoundReaver.Extensions"
-      xmlns:i="using:Microsoft.Xaml.Interactivity"
       xmlns:local="using:Sungaila.SoundReaver"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:sb="using:Microsoft.UI.Composition.SystemBackdrops"

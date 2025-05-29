@@ -11,8 +11,11 @@
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PublishAot>true</PublishAot>
+    <EnableProfileGuidedOptimization>true</EnableProfileGuidedOptimization>
+    <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
   </PropertyGroup>
 
   <!-- C# compiler -->
@@ -29,7 +32,20 @@
     <Deterministic>true</Deterministic>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
-  
+
+  <!-- Trimming options -->
+  <PropertyGroup>
+    <DebuggerSupport>false</DebuggerSupport>
+    <EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
+    <EventSourceSupport>false</EventSourceSupport>
+    <HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
+    <MetadataUpdaterSupport>false</MetadataUpdaterSupport>
+    <MetricsSupport>false</MetricsSupport>
+    <StackTraceSupport>false</StackTraceSupport>
+    <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <XmlResolverIsNetworkingEnabledByDefault>false</XmlResolverIsNetworkingEnabledByDefault>
+  </PropertyGroup>
+
   <ItemGroup>
     <Content Include="Sounds\raziel-0026.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -57,9 +73,8 @@
     <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.250402" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250513003" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="3.0.0" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
-    <PackageReference Include="System.Drawing.Common" Version="9.0.5" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" ExcludeAssets="all" />
   </ItemGroup>
 
   <!--

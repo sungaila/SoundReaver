@@ -1,11 +1,8 @@
 using CommunityToolkit.WinUI;
-using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Sungaila.SoundReaver.ViewModels;
-using System;
-using System.Drawing;
 
 namespace Sungaila.SoundReaver
 {
@@ -24,9 +21,6 @@ namespace Sungaila.SoundReaver
             {
                 frameworkElement.DataContext = new AppViewModel();
             }
-
-            var icon = Icon.ExtractAssociatedIcon(Environment.ProcessPath!)!;
-            AppWindow.SetIcon(Win32Interop.GetIconIdFromIcon(icon.Handle));
 
             if (AppWindow.Presenter is OverlappedPresenter presenter)
             {
