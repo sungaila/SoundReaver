@@ -25,12 +25,13 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
@@ -63,27 +64,34 @@
                 <ToggleSwitch IsOn="{x:Bind Data.Settings.IsShiftSoundEnabled, Mode=TwoWay}" />
             </controls:SettingsCard>
 
-            <controls:SettingsCard x:Uid="IssueSettingsCard"
+            <controls:SettingsCard x:Uid="WindowsAppSettingsCard"
                                    Grid.Row="6"
                                    ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
+                                   Click="WindowsAppSettingsCard_Click"
+                                   HeaderIcon="{ui:FontIcon Glyph=&#xE71D;}"
+                                   IsClickEnabled="True" />
+
+            <controls:SettingsCard x:Uid="IssueSettingsCard"
+                                   Grid.Row="8"
+                                   ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
                                    ActionIconToolTip="https://github.com/sungaila/SoundReaver/issues"
-                                   Click="SettingsCard_Click"
+                                   Click="IssueSettingsCard_Click"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xEBE8;}"
                                    IsClickEnabled="True" />
 
             <TextBlock x:Uid="AppInfoTextBlock"
-                       Grid.Row="8"
+                       Grid.Row="10"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
             <TextBlock x:Name="AppNameTextBlock"
-                       Grid.Row="10"
+                       Grid.Row="12"
                        IsTextSelectionEnabled="True" />
 
             <TextBlock x:Name="AuthorTextBlock"
-                       Grid.Row="11"
+                       Grid.Row="13"
                        IsTextSelectionEnabled="True" />
 
-            <controls:WrapPanel Grid.Row="13"
+            <controls:WrapPanel Grid.Row="14"
                                 HorizontalSpacing="5"
                                 Orientation="Horizontal">
                 <HyperlinkButton x:Name="GitHubHyperlinkButton"
@@ -100,13 +108,13 @@
             </controls:WrapPanel>
 
             <TextBlock x:Uid="LicensesTextBlock"
-                       Grid.Row="15"
+                       Grid.Row="16"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
-            <ListView Grid.Row="17"
+            <ListView Grid.Row="18"
                       CanDragItems="False"
                       CanReorderItems="False"
-                      SelectionMode="Single">
+                      SelectionMode="None">
                 <ListView.Items>
                     <ListViewItem Padding="10,5">
                         <StackPanel Orientation="Vertical">
@@ -118,6 +126,18 @@
                             </controls:WrapPanel>
 
                             <controls:WrapPanel HorizontalSpacing="5" Orientation="Horizontal">
+                                <HyperlinkButton x:Name="LicenseAppIconHomepageHyperlinkButton"
+                                                 x:Uid="LicenseAppIconHomepageHyperlinkButton"
+                                                 VerticalAlignment="Center"
+                                                 NavigateUri="https://www.convalise.com/"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                <HyperlinkButton x:Name="LicenseAppIconGitHubHyperlinkButton"
+                                                 x:Uid="LicenseAppIconGitHubHyperlinkButton"
+                                                 VerticalAlignment="Center"
+                                                 NavigateUri="https://github.com/convalise"
+                                                 Style="{StaticResource ExternalHyperlinkStyle}"
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseAppIconAboutHyperlinkButton"
                                                  x:Uid="LicenseAppIconAboutHyperlinkButton"
                                                  VerticalAlignment="Center"

@@ -140,7 +140,7 @@ namespace Sungaila.SoundReaver.Views
 
         private async void SettingsHyperlinkButton_Click(object sender, RoutedEventArgs e)
         {
-            await Launcher.LaunchUriAsync(new Uri("ms-settings:appsfeatures-app"));
+            await Launcher.LaunchUriAsync(SettingsView.WindowsAppSettingsUri);
         }
 
         private bool _isUpdatingTrackPositionControls = false;

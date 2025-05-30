@@ -36,9 +36,16 @@ namespace Sungaila.SoundReaver.Views
             AuthorTextBlock.Text = author;
         }
 
+        internal static readonly Uri WindowsAppSettingsUri = new("ms-settings:appsfeatures-app");
+
+        private async void WindowsAppSettingsCard_Click(object sender, RoutedEventArgs e)
+        {
+            await Launcher.LaunchUriAsync(WindowsAppSettingsUri);
+        }
+
         private static readonly Uri _githubIssuesUri = new("https://github.com/sungaila/SoundReaver/issues");
 
-        private async void SettingsCard_Click(object sender, RoutedEventArgs e)
+        private async void IssueSettingsCard_Click(object sender, RoutedEventArgs e)
         {
             await Launcher.LaunchUriAsync(_githubIssuesUri);
         }

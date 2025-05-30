@@ -148,19 +148,19 @@
     <value>DeviantArt</value>
   </data>
   <data name="LicenseAppIconAuthorTextBlock.Text" xml:space="preserve">
-    <value>by Conrado (convalise)</value>
+    <value>by Conrado de Castro Valise (convalise)</value>
   </data>
   <data name="LicenseAppIconGalleryHyperlinkButton.Content" xml:space="preserve">
     <value>Gallery</value>
   </data>
   <data name="LicenseAppIconTextBlock.Text" xml:space="preserve">
-    <value>App and package icons</value>
+    <value>App, package and chapter icons</value>
   </data>
   <data name="LicenseSoundtrackAuthor1TextBlock.Text" xml:space="preserve">
     <value>composed by Kurt Harland</value>
   </data>
   <data name="LicenseSoundtrackAuthor2TextBlock.Text" xml:space="preserve">
-    <value>remastered by DeeDyne &amp; SalsaGal</value>
+    <value>ripped and remastered by DeeDyne &amp; SalsaGal</value>
   </data>
   <data name="LicenseSoundtrackDenHyperlinkButton.Content" xml:space="preserve">
     <value>The Ancient’s Den</value>
@@ -257,5 +257,17 @@
   </data>
   <data name="PlayButton.AutomationProperties.Name" xml:space="preserve">
     <value>Play/Pause</value>
+  </data>
+  <data name="LicenseAppIconHomepageHyperlinkButton.Content" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="LicenseAppIconGitHubHyperlinkButton.Content" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="WindowsAppSettingsCard.Header" xml:space="preserve">
+    <value>Open Windows app settings</value>
+  </data>
+  <data name="WindowsAppSettingsCard.Description" xml:space="preserve">
+    <value>Check the Windows app settings for the installed music packs.</value>
   </data>
 </root>
