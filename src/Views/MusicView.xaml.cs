@@ -2,6 +2,7 @@ using CommunityToolkit.WinUI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Shapes;
 using Sungaila.SoundReaver.Manager;
 using Sungaila.SoundReaver.ViewModels;
@@ -212,6 +213,15 @@ namespace Sungaila.SoundReaver.Views
             {
                 indicator.Height = 48;
             }
+        }
+
+        private void VolumeButton_ProcessKeyboardAccelerators(UIElement sender, ProcessKeyboardAcceleratorEventArgs args)
+        {
+            if (sender is not Button button || button.Flyout is null || args.Key != VirtualKey.V)
+                return;
+
+            VolumeSlider.Focus(FocusState.Keyboard);
+            args.Handled = true;
         }
     }
 }

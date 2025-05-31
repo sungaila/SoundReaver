@@ -29,6 +29,7 @@
                                  False="Play"
                                  True="Pause" />
         <c:DoubleToTimeSpanFormattedConverter x:Key="DoubleToTimeSpanFormattedConverter" />
+        <c:DoubleToVolumeGlyphConverter x:Key="DoubleToVolumeGlyphConverter" />
 
         <DataTemplate x:Key="TrackTemplate" x:DataType="vm:TrackViewModel">
             <TreeViewItem Content="{x:Bind Name, Mode=OneWay}"
@@ -214,8 +215,13 @@
                         Grid.Column="4"
                         Width="50"
                         Height="50"
+                        AccessKey="V"
+                        ProcessKeyboardAccelerators="VolumeButton_ProcessKeyboardAccelerators"
                         Style="{ThemeResource EllipsisButton}">
-                    <SymbolIcon Symbol="Volume" />
+                    <FontIcon Glyph="{x:Bind VolumeSlider.Value, Mode=OneWay, Converter={StaticResource DoubleToVolumeGlyphConverter}}" />
+                    <Button.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="V" />
+                    </Button.KeyboardAccelerators>
                     <Button.Flyout>
                         <Flyout>
                             <Slider x:Name="VolumeSlider"
@@ -224,6 +230,7 @@
                                     Maximum="100"
                                     Minimum="0"
                                     StepFrequency="1"
+                                    TickFrequency="25"
                                     Value="{x:Bind Data.Volume, Mode=TwoWay}" />
                         </Flyout>
                     </Button.Flyout>
