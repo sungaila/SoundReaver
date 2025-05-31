@@ -127,7 +127,7 @@ namespace Sungaila.SoundReaver.Views
                     await TrackManager.InitializeAsync();
                     viewModel.Categories.Clear();
 
-                    await foreach (var category in TrackManager.GenerateViewModelsAsync())
+                    foreach (var category in await TrackManager.GenerateViewModelsAsync())
                     {
                         viewModel.Categories.Add(category);
                     }

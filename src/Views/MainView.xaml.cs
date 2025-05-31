@@ -32,7 +32,7 @@ namespace Sungaila.SoundReaver.Views
                 if (DataContext is not AppViewModel viewModel)
                     return;
 
-                await foreach (var category in TrackManager.GenerateViewModelsAsync())
+                foreach (var category in await TrackManager.GenerateViewModelsAsync())
                 {
                     viewModel.Categories.Add(category);
                 }

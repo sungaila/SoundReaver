@@ -6,11 +6,11 @@ namespace Sungaila.SoundReaver.ViewModels
 {
     public partial class CategoryViewModel : ViewModel
     {
-        [ObservableProperty]
-        public required partial string Name { get; set; }
+        public required string Id { get; init; }
 
-        [ObservableProperty]
-        public partial ImageSource? Logo { get; set; }
+        public required string Name { get; init; }
+
+        public ImageSource? Logo { get; set; }
 
         [ObservableProperty]
         public partial bool IsExpanded { get; set; }

@@ -6,7 +6,7 @@
          IgnorableNamespaces="uap uap10">
 
   <Identity Name="42088DavidSungaila.SoundReaver"
-	          Publisher="CN=A7B45941-28FC-4F92-B416-DDCDFFD9BCBC"
+	          Publisher="CN=&quot;Open Source Developer, David Sungaila&quot;, O=Open Source Developer, L=Berlin, S=Berlin, C=DE"
 	          Version="1.0.3.0"/>
 
   <mp:PhoneIdentity PhoneProductId="0ca1eaea-0069-471d-8f48-3a429fb36a95"
@@ -19,9 +19,6 @@
   </Properties>
 
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Universal"
-		                    MinVersion="10.0.22000.0"
-		                    MaxVersionTested="10.0.26100.0"/>
     <TargetDeviceFamily Name="Windows.Desktop"
 		                    MinVersion="10.0.22000.0"
 		                    MaxVersionTested="10.0.26100.0"/>

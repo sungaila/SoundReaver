@@ -45,8 +45,47 @@
     <UseSystemResourceKeys>true</UseSystemResourceKeys>
     <XmlResolverIsNetworkingEnabledByDefault>false</XmlResolverIsNetworkingEnabledByDefault>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <None Remove="Logos\DrownedAbbey.png" />
+    <None Remove="Logos\HumanCitadel.png" />
+    <None Remove="Logos\Necropolis.png" />
+    <None Remove="Logos\RazielsStronghold.png" />
+    <None Remove="Logos\RuinedCity.png" />
+    <None Remove="Logos\SarafanTomb.png" />
+    <None Remove="Logos\SilencedCathedral.png" />
+    <None Remove="Logos\TheLighthouse.png" />
+    <None Remove="Logos\Underworld.png" />
+  </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Logos\DrownedAbbey.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\HumanCitadel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\Necropolis.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\RazielsStronghold.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\RuinedCity.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\SarafanTomb.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\SilencedCathedral.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\TheLighthouse.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Logos\Underworld.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sounds\raziel-0026.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

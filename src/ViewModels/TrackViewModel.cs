@@ -1,18 +1,14 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Windows.Storage;
+﻿using Windows.Storage;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
-    public partial class TrackViewModel : ViewModel
+    public class TrackViewModel : ViewModel
     {
-        [ObservableProperty]
-        public required partial string Name { get; set; }
+        public required string Name { get; init; }
 
-        [ObservableProperty]
-        public required partial StorageFile? Spectral { get; set; }
+        public required StorageFile? Spectral { get; init; }
 
-        [ObservableProperty]
-        public required partial StorageFile? Material { get; set; }
+        public required StorageFile? Material { get; init; }
 
         public bool IsSelected
         {
