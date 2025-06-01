@@ -3,10 +3,8 @@ using Sungaila.SoundReaver.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
-using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Search;
 
@@ -65,7 +63,16 @@ namespace Sungaila.SoundReaver.Manager
 
             foreach (var category in categories)
             {
-                category.Logo = logoFolder != null ? await CreateBitmapFromLogoAsync(await logoFolder.TryGetItemAsync($"{category.Id}.png") as StorageFile) : null;
+                var logoFile = logoFolder != null ? await logoFolder.TryGetItemAsync($"{category.Id}.png") as StorageFile : null;
+                category.Logo = await CreateBitmapFromLogoAsync(logoFile);
+
+                if (category.Logo != null)
+                {
+                    foreach (var track in category.Tracks)
+                    {
+                        track.Thumbnail = logoFile;
+                    }
+                }
             }
 
             return categories;
@@ -91,8 +98,8 @@ namespace Sungaila.SoundReaver.Manager
                 category.Tracks.Add(new()
                 {
                     Name = track.Track.Name,
-                    Material = track.Material,
-                    Spectral = track.Spectral
+                    Spectral = track.Spectral,
+                    Material = track.Material
                 });
             }
 

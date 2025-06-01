@@ -7,8 +7,10 @@ using Microsoft.UI.Xaml.Shapes;
 using Sungaila.SoundReaver.Manager;
 using Sungaila.SoundReaver.ViewModels;
 using System;
+using Windows.Media.Playback;
 using Windows.System;
 using Windows.UI;
+using DispatcherQueuePriority = Microsoft.UI.Dispatching.DispatcherQueuePriority;
 
 namespace Sungaila.SoundReaver.Views
 {
@@ -20,11 +22,31 @@ namespace Sungaila.SoundReaver.Views
         {
             InitializeComponent();
             _positionTimer.Tick += PositionTimer_Tick;
+            PlaybackManager.PlaybackStateChanged += PlaybackManager_PlaybackStateChanged;
         }
 
         private void PositionTimer_Tick(object? sender, object e)
         {
             UpdateTrackPositionControls();
+        }
+
+        private void PlaybackManager_PlaybackStateChanged(object? sender, MediaPlaybackState e)
+        {
+            if (e != MediaPlaybackState.Playing && e != MediaPlaybackState.Paused)
+                return;
+
+            DispatcherQueue.TryEnqueue(DispatcherQueuePriority.High, () =>
+            {
+                if (_isUpdatingTrackPositionControls)
+                    return;
+
+                if (e == MediaPlaybackState.Playing)
+                    _positionTimer.Start();
+                else
+                    _positionTimer.Stop();
+
+                UpdateTrackPositionControls();
+            });
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -39,6 +61,7 @@ namespace Sungaila.SoundReaver.Views
         {
             _positionTimer.Stop();
             _positionTimer.Tick -= PositionTimer_Tick;
+            PlaybackManager.PlaybackStateChanged -= PlaybackManager_PlaybackStateChanged;
         }
 
         internal AppViewModel Data => (AppViewModel)DataContext;
@@ -72,11 +95,16 @@ namespace Sungaila.SoundReaver.Views
             Data.CurrentTrack = track;
             UpdateTrackPositionControls(false);
 
-            if (!PlaybackManager.IsPlaying)
-                return;
-
             _positionTimer.Stop();
-            await PlaybackManager.PlayTrack(track, Data.IsMaterial);
+            try
+            {
+                _isUpdatingTrackPositionControls = true;
+                await PlaybackManager.PlayTrack(track, Data.IsMaterial, true);
+            }
+            finally
+            {
+                _isUpdatingTrackPositionControls = false;
+            }
             UpdateTrackPositionControls(false);
             _positionTimer.Start();
         }
@@ -87,7 +115,15 @@ namespace Sungaila.SoundReaver.Views
                 return;
 
             _positionTimer.Stop();
-            await PlaybackManager.PlayTrack(track, Data.IsMaterial);
+            try
+            {
+                _isUpdatingTrackPositionControls = true;
+                await PlaybackManager.PlayTrack(track, Data.IsMaterial, false);
+            }
+            finally
+            {
+                _isUpdatingTrackPositionControls = false;
+            }
             UpdateTrackPositionControls(false);
             _positionTimer.Start();
         }
@@ -136,7 +172,7 @@ namespace Sungaila.SoundReaver.Views
                 {
                     hyperlinkButton.IsEnabled = true;
                 }
-            }, Microsoft.UI.Dispatching.DispatcherQueuePriority.Low);
+            }, DispatcherQueuePriority.Low);
         }
 
         private async void SettingsHyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -148,6 +184,9 @@ namespace Sungaila.SoundReaver.Views
 
         private void UpdateTrackPositionControls(bool isTimerUpdate = true)
         {
+            if (_isUpdatingTrackPositionControls)
+                return;
+
             try
             {
                 _isUpdatingTrackPositionControls = true;

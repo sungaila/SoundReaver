@@ -93,6 +93,12 @@
             <controls:WrapPanel Grid.Row="14"
                                 HorizontalSpacing="5"
                                 Orientation="Horizontal">
+                <HyperlinkButton x:Name="MicrosoftStoreHyperlinkButton"
+                                 x:Uid="MicrosoftStoreHyperlinkButton"
+                                 NavigateUri="https://apps.microsoft.com/detail/9PC9XXBC2WB9"
+                                 Style="{StaticResource ExternalHyperlinkStyle}"
+                                 ToolTipService.ToolTip="{x:Bind MicrosoftStoreHyperlinkButton.NavigateUri, Mode=OneTime}" />
+
                 <HyperlinkButton x:Name="GitHubHyperlinkButton"
                                  x:Uid="GitHubHyperlinkButton"
                                  NavigateUri="https://github.com/sungaila/SoundReaver"

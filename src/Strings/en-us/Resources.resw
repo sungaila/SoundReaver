@@ -270,4 +270,7 @@
   <data name="WindowsAppSettingsCard.Description" xml:space="preserve">
     <value>Check the Windows app settings for the installed music packs.</value>
   </data>
+  <data name="MicrosoftStoreHyperlinkButton.Content" xml:space="preserve">
+    <value>Microsoft Store</value>
+  </data>
 </root>

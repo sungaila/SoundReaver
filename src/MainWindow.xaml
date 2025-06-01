@@ -21,7 +21,9 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <v:AppTitleBar Title="{x:Bind Title, Mode=OneTime}" Grid.Row="0" />
+        <v:AppTitleBar x:Name="AppTitleBar"
+                       Title="{x:Bind Title, Mode=OneTime}"
+                       Grid.Row="0" />
 
         <v:MainView Grid.Row="1" />
     </Grid>

@@ -2,9 +2,11 @@
 
 namespace Sungaila.SoundReaver.ViewModels
 {
-    public class TrackViewModel : ViewModel
+    public partial class TrackViewModel : ViewModel
     {
         public required string Name { get; init; }
+
+        public StorageFile? Thumbnail { get; set; }
 
         public required StorageFile? Spectral { get; init; }
 

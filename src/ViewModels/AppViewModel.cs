@@ -1,7 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Sungaila.SoundReaver.Manager;
+﻿using Sungaila.SoundReaver.Manager;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Windows.Storage;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
@@ -9,8 +9,17 @@ namespace Sungaila.SoundReaver.ViewModels
     {
         public SettingsViewModel Settings { get; } = new();
 
-        [ObservableProperty]
-        public partial bool IsMaterial { get; set; }
+        public bool IsMaterial
+        {
+            get => field;
+            set
+            {
+                if (!SetProperty(ref field, value))
+                    return;
+
+                ApplicationData.Current.RoamingSettings.Values[nameof(IsMaterial)] = value;
+            }
+        } = false;
 
         public bool IsRepeating
         {
@@ -20,6 +29,7 @@ namespace Sungaila.SoundReaver.ViewModels
                 if (!SetProperty(ref field, value))
                     return;
 
+                ApplicationData.Current.RoamingSettings.Values[nameof(IsRepeating)] = value;
                 PlaybackManager.SetIsLoopingEnabled(value);
             }
         } = true;
@@ -32,6 +42,7 @@ namespace Sungaila.SoundReaver.ViewModels
                 if (!SetProperty(ref field, value))
                     return;
 
+                ApplicationData.Current.RoamingSettings.Values[nameof(Volume)] = value;
                 PlaybackManager.SetVolume(value);
             }
         } = 100.0d;

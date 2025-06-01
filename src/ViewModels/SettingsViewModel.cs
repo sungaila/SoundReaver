@@ -1,8 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using Windows.Globalization;
+using Windows.Storage;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
@@ -24,7 +24,16 @@ namespace Sungaila.SoundReaver.ViewModels
 
         public ObservableCollection<LanguageViewModel> AvailableLanguages { get; } = [.. ApplicationLanguages.ManifestLanguages.Select(l => (LanguageViewModel)new CultureInfo(l))];
 
-        [ObservableProperty]
-        public partial bool IsShiftSoundEnabled { get; set; } = true;
+        public bool IsShiftSoundEnabled
+        {
+            get => field;
+            set
+            {
+                if (!SetProperty(ref field, value))
+                    return;
+
+                ApplicationData.Current.RoamingSettings.Values[nameof(IsShiftSoundEnabled)] = value;
+            }
+        } = true;
     }
 }
