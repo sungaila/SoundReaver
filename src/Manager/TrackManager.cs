@@ -31,7 +31,7 @@ namespace Sungaila.SoundReaver.Manager
 
                 var packages = new List<Package> { Package.Current };
 
-                packages.AddRange([.. Package.Current.Dependencies.Where(d => d.IsOptional && d.Id.Name.StartsWith(Package.Current.Id.Name + ".Music."))]);
+                packages.AddRange([.. Package.Current.Dependencies.Where(d => d.IsOptional && d.Id.Name.StartsWith($"{Package.Current.Id.Name}."))]);
 
                 foreach (var pack in packages)
                 {

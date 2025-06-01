@@ -4,7 +4,7 @@
          xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
          xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
          IgnorableNamespaces="uap mp uap4">
-	<Identity Name="42088DavidSungaila.SoundReaver.Music.Necropolis"
+	<Identity Name="42088DavidSungaila.SoundReaver.Necropolis"
 	          Publisher="CN=&quot;Open Source Developer, David Sungaila&quot;, O=Open Source Developer, L=Berlin, S=Berlin, C=DE"
 	          Version="1.0.0.0"/>
 	<mp:PhoneIdentity PhoneProductId="fdae74c0-c77b-4daf-a004-c04307c80751"

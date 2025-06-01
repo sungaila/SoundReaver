@@ -12,7 +12,7 @@
         Title="Sound Reaver"
         mc:Ignorable="d">
     <Window.SystemBackdrop>
-        <local:MicaTintedBackdrop Alpha="60" TintColor="{StaticResource AccentColorSpectral}" />
+        <local:MicaTintedBackdrop Alpha="60" />
     </Window.SystemBackdrop>
 
     <Grid>
