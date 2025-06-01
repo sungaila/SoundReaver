@@ -18,6 +18,7 @@ namespace Sungaila.SoundReaver.ViewModels
                     return;
 
                 ApplicationData.Current.RoamingSettings.Values[nameof(IsMaterial)] = value;
+                PlaybackManager.IsMaterial = value;
             }
         } = false;
 

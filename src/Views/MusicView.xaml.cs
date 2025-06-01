@@ -99,7 +99,7 @@ namespace Sungaila.SoundReaver.Views
             try
             {
                 _isUpdatingTrackPositionControls = true;
-                await PlaybackManager.PlayTrack(track, Data.IsMaterial, true);
+                await PlaybackManager.PlayTrack(track, true);
             }
             finally
             {
@@ -118,7 +118,7 @@ namespace Sungaila.SoundReaver.Views
             try
             {
                 _isUpdatingTrackPositionControls = true;
-                await PlaybackManager.PlayTrack(track, Data.IsMaterial, false);
+                await PlaybackManager.PlayTrack(track, false);
             }
             finally
             {

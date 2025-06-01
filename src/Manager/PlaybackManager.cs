@@ -116,7 +116,7 @@ namespace Sungaila.SoundReaver.Manager
             }
             else if (args.Button == SystemMediaTransportControlsButton.Play && _lastTrack != null)
             {
-                await PlayTrack(_lastTrack, _lastIsMaterial, false);
+                await PlayTrack(_lastTrack, false);
             }
         }
 
@@ -164,7 +164,6 @@ namespace Sungaila.SoundReaver.Manager
 
         private static TimeSpan _lastPosition = TimeSpan.Zero;
         private static TrackViewModel? _lastTrack = null;
-        private static bool _lastIsMaterial = false;
 
         public static async Task SwitchTrackVariant()
         {
@@ -186,7 +185,7 @@ namespace Sungaila.SoundReaver.Manager
             }
         }
 
-        public static async Task PlayTrack(TrackViewModel trackViewModel, bool isMaterial, bool isTrackSwitching)
+        public static async Task PlayTrack(TrackViewModel trackViewModel, bool isTrackSwitching)
         {
             await EnsureInitializedAsync();
 
@@ -245,19 +244,18 @@ namespace Sungaila.SoundReaver.Manager
                 _materialMediaPlayer.SystemMediaTransportControls.DisplayUpdater.Update();
             }
 
-            _spectralMediaPlayer.IsMuted = isMaterial;
-            _materialMediaPlayer.IsMuted = !isMaterial;
+            _spectralMediaPlayer.IsMuted = IsMaterial;
+            _materialMediaPlayer.IsMuted = !IsMaterial;
 
-            _spectralMediaPlayer.CommandManager.IsEnabled = !isMaterial;
-            _materialMediaPlayer.CommandManager.IsEnabled = isMaterial;
+            _spectralMediaPlayer.CommandManager.IsEnabled = !IsMaterial;
+            _materialMediaPlayer.CommandManager.IsEnabled = IsMaterial;
 
-            App.MainWindow?.SetSubTitle(!isMaterial
+            App.MainWindow?.SetSubTitle(!IsMaterial
                 ? _spectralMediaPlayer.SystemMediaTransportControls.DisplayUpdater.MusicProperties.Title
                 : _materialMediaPlayer.SystemMediaTransportControls.DisplayUpdater.MusicProperties.Title
             );
 
             _lastTrack = trackViewModel;
-            _lastIsMaterial = isMaterial;
 
             if (!isTrackSwitching || wasPlaying)
             {
@@ -265,6 +263,8 @@ namespace Sungaila.SoundReaver.Manager
                 _materialMediaPlayer.Play();
             }
         }
+
+        public static bool IsMaterial { get; set; } = false;
 
         public static void SetIsLoopingEnabled(bool value)
         {
