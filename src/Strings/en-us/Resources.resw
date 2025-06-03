@@ -273,4 +273,7 @@
   <data name="MicrosoftStoreHyperlinkButton.Content" xml:space="preserve">
     <value>Microsoft Store</value>
   </data>
+  <data name="TrademarkTextBlock.Text" xml:space="preserve">
+    <value>This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.</value>
+  </data>
 </root>

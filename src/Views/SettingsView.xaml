@@ -32,6 +32,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
@@ -90,7 +91,13 @@
                        Grid.Row="13"
                        IsTextSelectionEnabled="True" />
 
-            <controls:WrapPanel Grid.Row="14"
+            <TextBlock x:Uid="TrademarkTextBlock"
+                       Grid.Row="14"
+                       Opacity="0.6"
+                       Style="{StaticResource CaptionTextBlockStyle}"
+                       TextWrapping="Wrap" />
+
+            <controls:WrapPanel Grid.Row="15"
                                 HorizontalSpacing="5"
                                 Orientation="Horizontal">
                 <HyperlinkButton x:Name="MicrosoftStoreHyperlinkButton"
@@ -113,10 +120,10 @@
             </controls:WrapPanel>
 
             <TextBlock x:Uid="LicensesTextBlock"
-                       Grid.Row="16"
+                       Grid.Row="17"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
-            <ListView Grid.Row="18"
+            <ListView Grid.Row="19"
                       CanDragItems="False"
                       CanReorderItems="False"
                       SelectionMode="None">
