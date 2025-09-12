@@ -26,6 +26,8 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
@@ -64,15 +66,21 @@
                 <ToggleSwitch IsOn="{x:Bind Data.Settings.IsShiftSoundEnabled, Mode=TwoWay}" />
             </controls:SettingsCard>
 
-            <controls:SettingsCard x:Uid="WindowsAppSettingsCard"
+            <controls:SettingsCard x:Uid="PatternCanvasVisibleSettingsCard"
                                    Grid.Row="6"
+                                   HeaderIcon="{ui:FontIcon Glyph=&#xE8B9;}">
+                <ToggleSwitch IsOn="{x:Bind Data.Settings.PatternCanvasVisible, Mode=TwoWay}" />
+            </controls:SettingsCard>
+
+            <controls:SettingsCard x:Uid="WindowsAppSettingsCard"
+                                   Grid.Row="8"
                                    ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
                                    Click="WindowsAppSettingsCard_Click"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xE71D;}"
                                    IsClickEnabled="True" />
 
             <controls:SettingsCard x:Uid="IssueSettingsCard"
-                                   Grid.Row="8"
+                                   Grid.Row="10"
                                    ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
                                    ActionIconToolTip="https://github.com/sungaila/SoundReaver/issues"
                                    Click="IssueSettingsCard_Click"
@@ -80,24 +88,24 @@
                                    IsClickEnabled="True" />
 
             <TextBlock x:Uid="AppInfoTextBlock"
-                       Grid.Row="10"
+                       Grid.Row="12"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
             <TextBlock x:Name="AppNameTextBlock"
-                       Grid.Row="12"
+                       Grid.Row="14"
                        IsTextSelectionEnabled="True" />
 
             <TextBlock x:Name="AuthorTextBlock"
-                       Grid.Row="13"
+                       Grid.Row="15"
                        IsTextSelectionEnabled="True" />
 
             <TextBlock x:Uid="TrademarkTextBlock"
-                       Grid.Row="14"
+                       Grid.Row="16"
                        Opacity="0.6"
                        Style="{StaticResource CaptionTextBlockStyle}"
                        TextWrapping="Wrap" />
 
-            <controls:WrapPanel Grid.Row="15"
+            <controls:WrapPanel Grid.Row="17"
                                 HorizontalSpacing="5"
                                 Orientation="Horizontal">
                 <HyperlinkButton x:Name="MicrosoftStoreHyperlinkButton"
@@ -120,10 +128,10 @@
             </controls:WrapPanel>
 
             <TextBlock x:Uid="LicensesTextBlock"
-                       Grid.Row="17"
+                       Grid.Row="19"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
-            <ListView Grid.Row="19"
+            <ListView Grid.Row="21"
                       CanDragItems="False"
                       CanReorderItems="False"
                       SelectionMode="None">

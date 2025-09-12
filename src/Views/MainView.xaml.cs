@@ -66,5 +66,13 @@ namespace Sungaila.SoundReaver.Views
                 null,
                 args.RecommendedNavigationTransitionInfo);
         }
+
+        private void RootFrame_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (App.MainWindow == null || App.MainWindow.CanvasControl == null || App.MainWindow.NavigationView == null)
+                return;
+
+            App.MainWindow.CanvasControl.Width = App.MainWindow.NavigationView.ActualWidth - RootFrame.ActualWidth;
+        }
     }
 }

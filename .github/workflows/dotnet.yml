@@ -25,20 +25,16 @@ jobs:
     if: (github.event_name != 'workflow_dispatch' && true || inputs.run_build) == true
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@main
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v5
         with:
-          msbuild-architecture: x64
-      - name: Setup .NET 9
-        uses: actions/setup-dotnet@main
-        with:
-          dotnet-version: 9.x
-          dotnet-quality: 'ga'
+          dotnet-version: 10.x
+          dotnet-quality: 'preview'
       - name: Setup Windows 11 SDK (10.0.26100.0)
-        uses: GuillaumeFalourd/setup-windows10-sdk-action@main
+        uses: GuillaumeFalourd/setup-windows10-sdk-action@v2
         with:
             sdk-version: 26100
       - name: Setup workloads
@@ -46,4 +42,4 @@ jobs:
       - name: Restore
         run: dotnet restore SoundReaver.sln
       - name: Build
-        run: dotnet build SoundReaver.sln --configuration ${{ github.event_name != 'workflow_dispatch' && 'Debug' || inputs.build_configuration }} --no-restore -p:VersionSuffix=ci
+        run: dotnet build SoundReaver.sln --configuration ${{ github.event_name != 'workflow_dispatch' && 'Debug' || inputs.build_configuration }} --no-restore -p:VersionSuffix=ci -p:BuildMsix=false -p:GenerateAppxPackageOnBuild=false -p:AppxPackageSigningEnabled=false

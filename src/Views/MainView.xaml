@@ -34,6 +34,8 @@
                                 Tag="{ext:Type Type=local:MusicView}" />
         </NavigationView.MenuItems>
 
-        <Frame x:Name="RootFrame" Grid.Row="1" />
+        <Frame x:Name="RootFrame"
+               Grid.Row="1"
+               SizeChanged="RootFrame_SizeChanged" />
     </NavigationView>
 </Page>

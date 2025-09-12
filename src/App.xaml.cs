@@ -1,11 +1,14 @@
 ﻿using Microsoft.UI.Xaml;
 using Microsoft.Windows.Globalization;
 using System.Linq;
+using Windows.Storage;
 
 namespace Sungaila.SoundReaver
 {
     public partial class App : Application
     {
+        public static readonly ApplicationDataContainer LocalSettings = ApplicationData.Current.LocalSettings;
+
         internal static MainWindow? MainWindow { get; private set; }
 
         public App()

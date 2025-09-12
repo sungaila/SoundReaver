@@ -35,5 +35,19 @@ namespace Sungaila.SoundReaver.ViewModels
                 ApplicationData.Current.RoamingSettings.Values[nameof(IsShiftSoundEnabled)] = value;
             }
         } = true;
+
+        private bool _patternCanvasVisible = MainWindow.GetPatternCanvasVisible();
+
+        public bool PatternCanvasVisible
+        {
+            get => _patternCanvasVisible;
+            set
+            {
+                if (SetProperty(ref _patternCanvasVisible, value))
+                {
+                    MainWindow.SetPatternCanvasVisible(value);
+                }
+            }
+        }
     }
 }

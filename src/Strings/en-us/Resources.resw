@@ -276,4 +276,10 @@
   <data name="TrademarkTextBlock.Text" xml:space="preserve">
     <value>This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.</value>
   </data>
+  <data name="PatternCanvasVisibleSettingsCard.Description" xml:space="preserve">
+    <value>Draws the app icon as a pattern in the frame.</value>
+  </data>
+  <data name="PatternCanvasVisibleSettingsCard.Header" xml:space="preserve">
+    <value>Background pattern</value>
+  </data>
 </root>
