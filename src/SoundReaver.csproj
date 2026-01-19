@@ -12,7 +12,7 @@
     <PublishProfile>win-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <EnableProfileGuidedOptimization>true</EnableProfileGuidedOptimization>
     <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
   </PropertyGroup>
@@ -120,12 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.250402" />
-    <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.250402" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.251219" />
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
 		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.3.2" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.250907003" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
     <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3485.44" ExcludeAssets="all" />
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3650.58" ExcludeAssets="all" />
   </ItemGroup>
 
   <!--
@@ -140,7 +140,7 @@
   <!-- Publish Properties -->
   <PropertyGroup>
     <ApplicationIcon>App.ico</ApplicationIcon>
-    <PackageCertificateThumbprint>88923690B8DF96425DE802113F66A6A1B2C55787</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>CDCA5E05E8254B26FD0FE56A95222FCD7CC2D0EE</PackageCertificateThumbprint>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampServerUrl>http://time.certum.pl</AppxPackageSigningTimestampServerUrl>

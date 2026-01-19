@@ -25,14 +25,14 @@ jobs:
     if: (github.event_name != 'workflow_dispatch' && true || inputs.run_build) == true
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Setup .NET 10
         uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.x
-          dotnet-quality: 'preview'
+          dotnet-quality: 'ga'
       - name: Setup Windows 11 SDK (10.0.26100.0)
         uses: GuillaumeFalourd/setup-windows10-sdk-action@v2
         with:
