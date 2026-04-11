@@ -1,9 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.UI.Xaml.Media;
 using System.Collections.ObjectModel;
+using WinRT;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
+    [GeneratedBindableCustomProperty]
     public partial class CategoryViewModel : ViewModel
     {
         public required string Id { get; init; }

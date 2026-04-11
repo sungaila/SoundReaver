@@ -1,157 +1,168 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
-    <TargetPlatformMinVersion>10.0.22000.0</TargetPlatformMinVersion>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.22000.0</TargetPlatformMinVersion>
 		<WindowsSdkPackageVersion>10.0.26100.75</WindowsSdkPackageVersion>
-    <AssemblyName>Sound Reaver</AssemblyName>
-    <RootNamespace>Sungaila.SoundReaver</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Platforms>x86;x64;ARM64</Platforms>
-    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-    <PublishProfile>win-$(Platform).pubxml</PublishProfile>
-    <UseWinUI>true</UseWinUI>
-    <EnableMsixTooling>true</EnableMsixTooling>
-    <Version>1.0.7</Version>
-    <EnableProfileGuidedOptimization>true</EnableProfileGuidedOptimization>
-    <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
-  </PropertyGroup>
+		<AssemblyName>Sound Reaver</AssemblyName>
+		<RootNamespace>Sungaila.SoundReaver</RootNamespace>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<Platforms>x86;x64;ARM64</Platforms>
+		<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+		<PublishProfile>win-$(Platform).pubxml</PublishProfile>
+		<UseWinUI>true</UseWinUI>
+		<EnableMsixTooling>true</EnableMsixTooling>
+		<Version>1.1.0</Version>
+		<ApplicationIcon>App.ico</ApplicationIcon>
+		<EnableProfileGuidedOptimization>true</EnableProfileGuidedOptimization>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
 
-  <!-- C# compiler -->
-  <PropertyGroup>
-    <LangVersion>preview</LangVersion>
-    <Nullable>enable</Nullable>
-    <Features>strict</Features>
-  </PropertyGroup>
+	<!-- C# compiler -->
+	<PropertyGroup>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+		<Features>strict</Features>
+		<NoWarn>IL2026</NoWarn>
+	</PropertyGroup>
 
-  <!-- Release builds -->
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
-    <SignAssembly>true</SignAssembly>
-    <Optimize>true</Optimize>
-    <Deterministic>true</Deterministic>
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	<!-- Release builds -->
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<SignAssembly>true</SignAssembly>
+		<Optimize>true</Optimize>
+		<Deterministic>true</Deterministic>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 		<DebugType>none</DebugType>
 		<DebugSymbols>false</DebugSymbols>
-  </PropertyGroup>
+	</PropertyGroup>
 
 	<!-- Trimming & AOT options -->
 	<PropertyGroup>
 		<TrimMode>full</TrimMode>
+		<DebuggerSupport>false</DebuggerSupport>
 		<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>
-		<EventSourceSupport>false</EventSourceSupport>
-		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
-		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
-		<MetricsSupport>false</MetricsSupport>
 		<StackTraceSupport>false</StackTraceSupport>
 		<UseSystemResourceKeys>true</UseSystemResourceKeys>
 		<XmlResolverIsNetworkingEnabledByDefault>false</XmlResolverIsNetworkingEnabledByDefault>
-		<DebuggerSupport>false</DebuggerSupport>
 		<_AggressiveAttributeTrimming>true</_AggressiveAttributeTrimming>
 		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
 		<OptimizationPreference>Speed</OptimizationPreference>
+		<IlcOptimizationPreference>Speed</IlcOptimizationPreference>
 		<InvariantGlobalization>false</InvariantGlobalization>
+		<MetricsSupport>false</MetricsSupport>
+		<EventSourceSupport>false</EventSourceSupport>
+		<MetadataUpdaterSupport>false</MetadataUpdaterSupport>
 		<Http3Support>false</Http3Support>
 		<UseNativeHttpHandler>true</UseNativeHttpHandler>
+		<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>
 		<UseSizeOptimizedLinq>true</UseSizeOptimizedLinq>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Logos\DrownedAbbey.png" />
-    <None Remove="Logos\HumanCitadel.png" />
-    <None Remove="Logos\Necropolis.png" />
-    <None Remove="Logos\RazielsStronghold.png" />
-    <None Remove="Logos\RuinedCity.png" />
-    <None Remove="Logos\SarafanTomb.png" />
-    <None Remove="Logos\SilencedCathedral.png" />
-    <None Remove="Logos\TheLighthouse.png" />
-    <None Remove="Logos\Underworld.png" />
+	<ItemGroup>
+		<None Remove="Logos\DrownedAbbey.png" />
+		<None Remove="Logos\HumanCitadel.png" />
+		<None Remove="Logos\Necropolis.png" />
+		<None Remove="Logos\RazielsStronghold.png" />
+		<None Remove="Logos\RuinedCity.png" />
+		<None Remove="Logos\SarafanTomb.png" />
+		<None Remove="Logos\SilencedCathedral.png" />
+		<None Remove="Logos\TheLighthouse.png" />
+		<None Remove="Logos\Underworld.png" />
 		<Content Include="App.ico" CopyToOutputDirectory="Always" Link="Assets\App.ico" />
-  </ItemGroup>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Content Include="Logos\DrownedAbbey.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\HumanCitadel.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\Necropolis.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\RazielsStronghold.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\RuinedCity.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\SarafanTomb.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\SilencedCathedral.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\TheLighthouse.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Logos\Underworld.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Sounds\raziel-0026.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Sounds\raziel-0062.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="Logos\DrownedAbbey.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\HumanCitadel.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\Necropolis.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\RazielsStronghold.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\RuinedCity.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\SarafanTomb.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\SilencedCathedral.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\TheLighthouse.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Logos\Underworld.png">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Sounds\raziel-0026.wav">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="Sounds\raziel-0062.wav">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Manifest Include="$(ApplicationManifest)" />
-  </ItemGroup>
+	<ItemGroup>
+		<Manifest Include="$(ApplicationManifest)" />
+	</ItemGroup>
 
-  <!--
+	<!--
     Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
     Tools extension to be activated for this project even if the Windows App SDK Nuget
     package has not yet been restored.
   -->
-  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <ProjectCapability Include="Msix" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-    <PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.251219" />
-    <PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
-		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.3.2" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
-    <PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3650.58" ExcludeAssets="all" />
-  </ItemGroup>
+	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+		<ProjectCapability Include="Msix" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
+		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.4.0" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.AI" Version="1.8.53" ExcludeAssets="all" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.ML" Version="1.8.2141" ExcludeAssets="all" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.Widgets" Version="1.8.251231004" ExcludeAssets="all" />
+		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3856.49" ExcludeAssets="all" />
+	</ItemGroup>
+	<ItemGroup>
+		<Page Update="Resources.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
 
-  <!--
+	<!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
     Explorer "Package and Publish" context menu entry to be enabled for this project even if
     the Windows App SDK Nuget package has not yet been restored.
   -->
-  <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+	</PropertyGroup>
 
-  <!-- Publish Properties -->
-  <PropertyGroup>
-    <ApplicationIcon>App.ico</ApplicationIcon>
-    <PackageCertificateThumbprint>CDCA5E05E8254B26FD0FE56A95222FCD7CC2D0EE</PackageCertificateThumbprint>
-    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <AppxPackageSigningTimestampServerUrl>http://time.certum.pl</AppxPackageSigningTimestampServerUrl>
-    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
-    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
-    <GenerateTestArtifacts>True</GenerateTestArtifacts>
-    <AppxBundle>Never</AppxBundle>
-    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
-  </PropertyGroup>
+	<!-- Publish Properties -->
+	<PropertyGroup>
+		<PackageCertificateThumbprint>316F880D4298B9AC929FF341B745703C8B906E02</PackageCertificateThumbprint>
+		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+		<GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+		<AppxPackageSigningTimestampServerUrl>http://time.certum.pl</AppxPackageSigningTimestampServerUrl>
+		<AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+		<AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+		<AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+		<GenerateTestArtifacts>True</GenerateTestArtifacts>
+		<AppxBundle>Never</AppxBundle>
+		<HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+		<AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
+		<PackageCertificateKeyFile>SoundReaver_TemporaryKey.pfx</PackageCertificateKeyFile>
+	</PropertyGroup>
 
 	<Target Name="RemoveWin2DWindowsMetadataReferenceForPackaging" AfterTargets="CoreCompile" BeforeTargets="GenerateAppxPackageFileMap;ResolvePublishFiles;MakeAppx">
 		<ItemGroup>

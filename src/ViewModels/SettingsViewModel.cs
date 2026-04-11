@@ -3,9 +3,11 @@ using System.Globalization;
 using System.Linq;
 using Windows.Globalization;
 using Windows.Storage;
+using WinRT;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
+    [GeneratedBindableCustomProperty]
     public partial class SettingsViewModel : ViewModel
     {
         private LanguageViewModel _selectedLanguage = new CultureInfo(ApplicationLanguages.PrimaryLanguageOverride);
@@ -22,7 +24,35 @@ namespace Sungaila.SoundReaver.ViewModels
             }
         }
 
-        public ObservableCollection<LanguageViewModel> AvailableLanguages { get; } = [.. ApplicationLanguages.ManifestLanguages.Select(l => (LanguageViewModel)new CultureInfo(l))];
+        public ObservableCollection<LanguageViewModel> AvailableLanguages
+        {
+            get
+            {
+                var result = new ObservableCollection<LanguageViewModel>
+                {
+                    // this represents the "automatic" option
+                    // where the ResourceLoader will resolve resources based on the system language
+                    new(string.Empty, App.ResourceLoader.GetString("PrimaryLanguageOverrideDisabled"))
+                };
+
+                foreach (var l in ApplicationLanguages.ManifestLanguages
+                    .OrderBy(l => l)
+                    .Select(l => new CultureInfo(l)))
+                {
+                    result.Add(l);
+                }
+
+                foreach (var l in result)
+                {
+                    if (string.IsNullOrEmpty(l.ParentIetfLanguageTag))
+                        continue;
+
+                    l.HasSiblingCultures = result.Any(c => c != l && c.ParentIetfLanguageTag == l.ParentIetfLanguageTag);
+                }
+
+                return result;
+            }
+        }
 
         public bool IsShiftSoundEnabled
         {
