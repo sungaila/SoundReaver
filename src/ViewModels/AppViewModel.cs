@@ -2,9 +2,11 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.Storage;
+using WinRT;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
+    [GeneratedBindableCustomProperty]
     public partial class AppViewModel : ViewModel
     {
         public SettingsViewModel Settings { get; } = new();

@@ -1,7 +1,9 @@
 ﻿using Windows.Storage;
+using WinRT;
 
 namespace Sungaila.SoundReaver.ViewModels
 {
+    [GeneratedBindableCustomProperty]
     public partial class TrackViewModel : ViewModel
     {
         public required string Name { get; init; }

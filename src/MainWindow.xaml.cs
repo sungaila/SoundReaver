@@ -9,6 +9,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Sungaila.SoundReaver.ViewModels;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Numerics;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -34,6 +35,10 @@ namespace Sungaila.SoundReaver
 
             if (Content is FrameworkElement frameworkElement)
             {
+                frameworkElement.FlowDirection = CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft
+                    ? FlowDirection.RightToLeft
+                    : FlowDirection.LeftToRight;
+
                 var viewModel = new AppViewModel();
                 LoadAndApplySettings(viewModel);
                 frameworkElement.DataContext = viewModel;
