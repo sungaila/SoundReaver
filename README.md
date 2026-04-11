@@ -13,6 +13,10 @@ The soundtrack was composed by [Kurt Harland](https://en.wikipedia.org/wiki/Kurt
 
 This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.
 
+<a href="https://apps.microsoft.com/detail/9PC9XXBC2WB9?launch=true">
+	<img alt="Get it from Microsoft Store" src="https://get.microsoft.com/images/en-us%20light.svg" width="200"/>
+</a>
+
 [Sound Reaver](https://github.com/user-attachments/assets/b7b9baf7-dc1e-489d-b8a9-fff9e2c22532)
 
 ## Help translate this app
