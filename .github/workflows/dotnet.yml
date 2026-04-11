@@ -62,7 +62,7 @@ jobs:
       - name: Resolve package dir
         shell: pwsh
         run: |
-          $dir = Get-ChildItem 'src/AppPackages/SoundReaver_*_${{ matrix.arch }}_Debug_Test' -Directory | Select-Object -First 1 -ExpandProperty FullName
+          $dir = Get-ChildItem 'src/Packages/SoundReaver_*_${{ matrix.arch }}_Debug_Test' -Directory | Select-Object -First 1 -ExpandProperty FullName
           $name = Split-Path $dir -Leaf
           "PACKAGE_DIR=$dir" >> $env:GITHUB_ENV
           "PACKAGE_NAME=$name" >> $env:GITHUB_ENV
