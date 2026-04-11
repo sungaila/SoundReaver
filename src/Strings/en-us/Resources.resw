@@ -277,7 +277,7 @@
     <value>Microsoft Store</value>
   </data>
 	<data name="TrademarkTextBlock.Text" xml:space="preserve">
-    <value>This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.</value>
+    <value>This is a fan project. “Legacy of Kain”, “Soul Reaver” and related trademarks are the property of Crystal Dynamics and Embracer Group.</value>
   </data>
 	<data name="PatternCanvasVisibleSettingsCard.Description" xml:space="preserve">
     <value>Draws the clan banners from Soul Reaver as patterns in the frame.</value>

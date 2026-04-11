@@ -150,7 +150,7 @@
 
 	<!-- Publish Properties -->
 	<PropertyGroup>
-		<PackageCertificateThumbprint>316F880D4298B9AC929FF341B745703C8B906E02</PackageCertificateThumbprint>
+		<PackageCertificateThumbprint>C3E57D2AA5E3D231220AA028E49BF2A9B1EE8AB6</PackageCertificateThumbprint>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<GenerateAppInstallerFile>False</GenerateAppInstallerFile>
 		<AppxPackageSigningTimestampServerUrl>http://time.certum.pl</AppxPackageSigningTimestampServerUrl>

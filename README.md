@@ -11,7 +11,7 @@ The soundtrack was composed by [Kurt Harland](https://en.wikipedia.org/wiki/Kurt
 
 [The work](https://www.deviantart.com/convalise/gallery/29182860/legacy-of-kain) of [Conrado de Castro Valise (convalise)](https://www.convalise.com/) was used for the app, package and chapter icons.
 
-This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.
+This is a fan project. “Legacy of Kain”, “Soul Reaver” and related trademarks are the property of Crystal Dynamics and Embracer Group.
 
 <a href="https://apps.microsoft.com/detail/9PC9XXBC2WB9?launch=true">
 	<img alt="Get it from Microsoft Store" src="https://get.microsoft.com/images/en-us%20light.svg" width="200"/>
