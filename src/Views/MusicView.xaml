@@ -227,7 +227,6 @@
                         Grid.Column="4"
                         Width="50"
                         Height="50"
-                        AccessKey="V"
                         ProcessKeyboardAccelerators="VolumeButton_ProcessKeyboardAccelerators"
                         Style="{ThemeResource EllipsisButton}">
                     <FontIcon AutomationProperties.AccessibilityView="Raw" Glyph="{x:Bind VolumeSlider.Value, Mode=OneWay, Converter={StaticResource DoubleToVolumeGlyphConverter}}" />

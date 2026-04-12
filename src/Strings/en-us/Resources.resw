@@ -249,6 +249,9 @@
   <data name="VolumeButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>Opens the volume control.</value>
   </data>
+  <data name="VolumeButton.AccessKey" xml:space="preserve">
+    <value>V</value>
+  </data>
   <data name="RepeatButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Repeat the current track</value>
   </data>
