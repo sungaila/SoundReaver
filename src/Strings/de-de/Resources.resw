@@ -280,7 +280,7 @@
     <value>Startet oder pausiert die Wiedergabe des ausgewählten Titels.</value>
   </data>
   <data name="LicenseAppIconHomepageHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Website von Conrado de Castro Valise öffnen</value>
+    <value>Website von Conrado de Castro Valise öffnen.</value>
   </data>
   <data name="LicenseAppIconGitHubHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>convalise auf GitHub öffnen</value>
@@ -375,10 +375,10 @@
   <data name="WeblateHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>Weblate-Projekt öffnen</value>
   </data>
-	<data name="NoCategoriesContainer.Width" xml:space="preserve">
+  <data name="NoCategoriesContainer.Width" xml:space="preserve">
     <value>440</value>
   </data>
-	<data name="VariantToggleSwitch.Width" xml:space="preserve">
+  <data name="VariantToggleSwitch.Width" xml:space="preserve">
     <value>110</value>
   </data>
 </root>
