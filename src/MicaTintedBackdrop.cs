@@ -25,7 +25,7 @@ namespace Sungaila.SoundReaver
             base.OnTargetDisconnected(disconnectedTarget);
 
             _micaController.RemoveSystemBackdropTarget(disconnectedTarget);
-            _micaController?.Dispose();
+            _micaController.Dispose();
         }
 
         public Color TintColor

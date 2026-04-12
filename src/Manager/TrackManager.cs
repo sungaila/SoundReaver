@@ -41,7 +41,10 @@ namespace Sungaila.SoundReaver.Manager
                         var files = await folder.GetFilesAsync(CommonFileQuery.OrderByName);
                         _files.AddRange(files.Where(f => f.FileType.Equals(".ogg", StringComparison.OrdinalIgnoreCase)));
                     }
-                    catch { }
+                    catch
+                    {
+                        // skip packages that fail to load for any reason
+                    }
                 }
             }
             finally

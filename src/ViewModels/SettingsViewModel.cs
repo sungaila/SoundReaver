@@ -24,7 +24,7 @@ namespace Sungaila.SoundReaver.ViewModels
             }
         }
 
-        public ObservableCollection<LanguageViewModel> AvailableLanguages
+        public static ObservableCollection<LanguageViewModel> AvailableLanguages
         {
             get
             {

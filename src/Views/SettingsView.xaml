@@ -54,7 +54,7 @@
                 <ComboBox x:Uid="LanguageComboBox"
                           AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Mode=TemplatedParent}}"
                           DisplayMemberPath="DisplayName"
-                          ItemsSource="{x:Bind Data.Settings.AvailableLanguages}"
+                          ItemsSource="{x:Bind v:SettingsViewModel.AvailableLanguages}"
                           Loaded="ComboBox_Loaded"
                           SelectedItem="{x:Bind Data.Settings.SelectedLanguage, Mode=TwoWay}" />
 
