@@ -101,7 +101,7 @@ namespace Sungaila.SoundReaver.Manager
 
         private static void PlaybackSession_PlaybackStateChanged(MediaPlaybackSession sender, object args)
         {
-            PlaybackStateChanged?.Invoke(sender, sender.PlaybackState);
+            PlaybackStateChanged?.Invoke(null, sender.PlaybackState);
         }
 
         private static async void SystemMediaTransportControls_ButtonPressed(SystemMediaTransportControls sender, SystemMediaTransportControlsButtonPressedEventArgs args)

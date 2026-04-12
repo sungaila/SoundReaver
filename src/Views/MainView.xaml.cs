@@ -46,7 +46,7 @@ namespace Sungaila.SoundReaver.Views
 
                 await PlaybackManager.EnsureInitializedAsync();
 
-                navigationView.SelectedItem = navigationView.MenuItems.First();
+                navigationView.SelectedItem = navigationView.MenuItems[0];
             }, DispatcherQueuePriority.Low);
         }
 

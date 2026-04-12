@@ -25,7 +25,7 @@ namespace Sungaila.SoundReaver
             MainWindow.Activate();
         }
 
-        private void Application_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
+        private static void Application_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
         {
             if (MainWindow == null)
                 return;
