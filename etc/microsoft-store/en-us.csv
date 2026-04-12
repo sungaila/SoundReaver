@@ -1,14 +1,16 @@
-﻿"location","source","target","ID","fuzzy","context","translator_comments","developer_comments"
-"2","A music playback app for the Legacy of Kain: Soul Reaver soundtrack.","A music playback app for the Legacy of Kain: Soul Reaver soundtrack.","Description","","","",""
-"3","• Update WindowsAppSDK and NuGet packages.","• Update WindowsAppSDK and NuGet packages.","ReleaseNotes","","","",""
-"4","Sound Reaver","Sound Reaver","Title","","","",""
-"8","A music playback app for the Legacy of Kain: Soul Reaver soundtrack.","A music playback app for the Legacy of Kain: Soul Reaver soundtrack.","ShortDescription","","","",""
-"9","David Sungaila","David Sungaila","DevStudio","","","",""
-"12","This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.","This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.","CopyrightTrademarkInformation","","","",""
-"150","Playback of the spectral soundtrack variant.","Playback of the spectral soundtrack variant.","DesktopScreenshotCaption1","","","",""
-"151","Playback of the material soundtrack variant.","Playback of the material soundtrack variant.","DesktopScreenshotCaption2","","","",""
-"900","Legacy of Kain: Soul Reaver","Legacy of Kain: Soul Reaver","SearchTerm1","","","",""
-"901","Music playback app","Music playback app","SearchTerm2","","","",""
-"902","Soundtrack","Soundtrack","SearchTerm3","","","",""
-"903","Soul Reaver","Soul Reaver","SearchTerm4","","","",""
-"1020","Play your favorite tracks from Legacy of Kain: Soul Reaver and switch between the spectral and material variants on the fly!","Play your favorite tracks from Legacy of Kain: Soul Reaver and switch between the spectral and material variants on the fly!","TrailerTitle1","","","",""
+﻿location,source,target,ID,fuzzy,context,translator_comments,developer_comments
+2,A music playback app for the Legacy of Kain: Soul Reaver soundtrack.,A music playback app for the Legacy of Kain: Soul Reaver soundtrack.,Description,,,,
+3,"• Add a german translation.
+• Update WindowsAppSDK and NuGet packages.","• Add a german translation.
+• Update WindowsAppSDK and NuGet packages.",ReleaseNotes,,,,
+4,Sound Reaver,Sound Reaver,Title,,,,
+8,A music playback app for the Legacy of Kain: Soul Reaver soundtrack.,A music playback app for the Legacy of Kain: Soul Reaver soundtrack.,ShortDescription,,,,
+9,David Sungaila,David Sungaila,DevStudio,,,,
+12,"This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.","This is a fan project. “Legacy of Kain”, “Soul Reaver“ and related trademarks are the property of Crystal Dynamics and Embracer Group.",CopyrightTrademarkInformation,,,,
+150,Playback of the spectral soundtrack variant.,Playback of the spectral soundtrack variant.,DesktopScreenshotCaption1,,,,
+151,Playback of the material soundtrack variant.,Playback of the material soundtrack variant.,DesktopScreenshotCaption2,,,,
+900,Legacy of Kain: Soul Reaver,Legacy of Kain: Soul Reaver,SearchTerm1,,,,
+901,Music playback app,Music playback app,SearchTerm2,,,,
+902,Soundtrack,Soundtrack,SearchTerm3,,,,
+903,Soul Reaver,Soul Reaver,SearchTerm4,,,,
+1020,Play your favorite tracks from Legacy of Kain: Soul Reaver and switch between the spectral and material variants on the fly!,Play your favorite tracks from Legacy of Kain: Soul Reaver and switch between the spectral and material variants on the fly!,TrailerTitle1,,,,
