@@ -249,9 +249,10 @@
                 </Button>
 
                 <Viewbox Grid.Column="5" Height="50">
-                    <ToggleSwitch x:Uid="VariantToggleSwitch"
-                                  MinWidth="110"
-                                  MaxWidth="110"
+                    <ToggleSwitch x:Name="VariantToggleSwitch"
+                                  x:Uid="VariantToggleSwitch"
+                                  MinWidth="{x:Bind VariantToggleSwitch.Width, Mode=OneWay}"
+                                  MaxWidth="{x:Bind VariantToggleSwitch.Width, Mode=OneWay}"
                                   IsOn="{x:Bind Data.IsMaterial, Mode=TwoWay}"
                                   Toggled="ToggleSwitch_Toggled">
                         <ToggleSwitch.KeyboardAccelerators>

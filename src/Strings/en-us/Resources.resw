@@ -378,4 +378,7 @@
 	<data name="NoCategoriesContainer.Width" xml:space="preserve">
     <value>380</value>
   </data>
+	<data name="VariantToggleSwitch.Width" xml:space="preserve">
+    <value>110</value>
+  </data>
 </root>
