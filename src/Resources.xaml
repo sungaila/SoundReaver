@@ -15,7 +15,9 @@
                 <DataTemplate x:DataType="x:String">
                     <StackPanel Orientation="Horizontal" Spacing="8">
                         <TextBlock Text="{x:Bind}" />
-                        <FontIcon FontSize="12" Glyph="&#xE8A7;" />
+                        <FontIcon AutomationProperties.AccessibilityView="Raw"
+                                  FontSize="12"
+                                  Glyph="&#xE8A7;" />
                     </StackPanel>
                 </DataTemplate>
             </Setter.Value>
