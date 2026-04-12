@@ -28,6 +28,8 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
@@ -49,15 +51,13 @@
             <controls:SettingsCard x:Uid="LanguageSettingsCard"
                                    Grid.Row="2"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xF2B7;}">
-                <ComboBox Width="200"
+                <ComboBox x:Uid="LanguageComboBox"
+                          AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                          DisplayMemberPath="DisplayName"
                           ItemsSource="{x:Bind Data.Settings.AvailableLanguages}"
-                          SelectedItem="{x:Bind Data.Settings.SelectedLanguage, Mode=TwoWay}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate x:DataType="v:LanguageViewModel">
-                            <TextBlock Text="{x:Bind NativeName}" />
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+                          Loaded="ComboBox_Loaded"
+                          SelectedItem="{x:Bind Data.Settings.SelectedLanguage, Mode=TwoWay}" />
+
             </controls:SettingsCard>
 
             <controls:SettingsCard x:Uid="IsShiftSoundEnabledSettingsCard"
@@ -83,29 +83,37 @@
                                    Grid.Row="10"
                                    ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
                                    ActionIconToolTip="https://github.com/sungaila/SoundReaver/issues"
-                                   Click="IssueSettingsCard_Click"
+                                   Click="SettingsCard_Click"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xEBE8;}"
                                    IsClickEnabled="True" />
 
+            <controls:SettingsCard x:Uid="TranslationSettingsCard"
+                                   Grid.Row="12"
+                                   ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
+                                   ActionIconToolTip="https://hosted.weblate.org/engage/soundreaver/"
+                                   Click="SettingsCard_Click"
+                                   HeaderIcon="{ui:FontIcon Glyph=&#xF87B;}"
+                                   IsClickEnabled="True" />
+
             <TextBlock x:Uid="AppInfoTextBlock"
-                       Grid.Row="12"
+                       Grid.Row="14"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
             <TextBlock x:Name="AppNameTextBlock"
-                       Grid.Row="14"
+                       Grid.Row="16"
                        IsTextSelectionEnabled="True" />
 
             <TextBlock x:Name="AuthorTextBlock"
-                       Grid.Row="15"
+                       Grid.Row="17"
                        IsTextSelectionEnabled="True" />
 
             <TextBlock x:Uid="TrademarkTextBlock"
-                       Grid.Row="16"
+                       Grid.Row="18"
                        Opacity="0.6"
                        Style="{StaticResource CaptionTextBlockStyle}"
                        TextWrapping="Wrap" />
 
-            <controls:WrapPanel Grid.Row="17"
+            <controls:WrapPanel Grid.Row="19"
                                 HorizontalSpacing="5"
                                 Orientation="Horizontal">
                 <HyperlinkButton x:Name="MicrosoftStoreHyperlinkButton"
@@ -120,6 +128,12 @@
                                  Style="{StaticResource ExternalHyperlinkStyle}"
                                  ToolTipService.ToolTip="{x:Bind GitHubHyperlinkButton.NavigateUri, Mode=OneTime}" />
 
+                <HyperlinkButton x:Name="WeblateHyperlinkButton"
+                                 x:Uid="WeblateHyperlinkButton"
+                                 NavigateUri="https://hosted.weblate.org/projects/soundreaver/"
+                                 Style="{StaticResource ExternalHyperlinkStyle}"
+                                 ToolTipService.ToolTip="{x:Bind WeblateHyperlinkButton.NavigateUri, Mode=OneTime}" />
+
                 <HyperlinkButton x:Name="SungailaHyperlinkButton"
                                  x:Uid="SungailaHyperlinkButton"
                                  NavigateUri="https://www.sungaila.de"
@@ -128,10 +142,10 @@
             </controls:WrapPanel>
 
             <TextBlock x:Uid="LicensesTextBlock"
-                       Grid.Row="19"
+                       Grid.Row="21"
                        Style="{StaticResource BodyStrongTextBlockStyle}" />
 
-            <ListView Grid.Row="21"
+            <ListView Grid.Row="23"
                       CanDragItems="False"
                       CanReorderItems="False"
                       SelectionMode="None">
@@ -151,13 +165,13 @@
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.convalise.com/"
                                                  Style="{StaticResource ExternalHyperlinkStyle}"
-                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconHomepageHyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseAppIconGitHubHyperlinkButton"
                                                  x:Uid="LicenseAppIconGitHubHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://github.com/convalise"
                                                  Style="{StaticResource ExternalHyperlinkStyle}"
-                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconGitHubHyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseAppIconAboutHyperlinkButton"
                                                  x:Uid="LicenseAppIconAboutHyperlinkButton"
                                                  VerticalAlignment="Center"

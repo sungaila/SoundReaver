@@ -32,13 +32,15 @@
         <c:DoubleToVolumeGlyphConverter x:Key="DoubleToVolumeGlyphConverter" />
 
         <DataTemplate x:Key="TrackTemplate" x:DataType="vm:TrackViewModel">
-            <TreeViewItem Content="{x:Bind Name, Mode=OneWay}"
+            <TreeViewItem AutomationProperties.Name="{x:Bind Name, Mode=OneWay}"
+                          Content="{x:Bind Name, Mode=OneWay}"
                           FontWeight="{x:Bind IsSelected, Mode=OneWay, Converter={StaticResource BoolToFontWeightBoldConverter}}"
                           IsSelected="{x:Bind IsSelected, Mode=OneWay}" />
         </DataTemplate>
 
         <DataTemplate x:Key="CategoryTemplate" x:DataType="vm:CategoryViewModel">
-            <TreeViewItem DoubleTapped="TreeViewItem_DoubleTapped"
+            <TreeViewItem AutomationProperties.Name="{x:Bind Name, Mode=OneWay}"
+                          DoubleTapped="TreeViewItem_DoubleTapped"
                           GlyphSize="16"
                           IsExpanded="{x:Bind IsExpanded, Mode=TwoWay}"
                           ItemsSource="{x:Bind Tracks}"
@@ -49,11 +51,13 @@
                                  Height="52"
                                  HorizontalAlignment="Center"
                                  VerticalAlignment="Center"
+                                 AutomationProperties.AccessibilityView="Raw"
                                  Fill="{StaticResource LogoAcrylicBrush}" />
                         <Image Width="48"
                                Height="48"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
+                               AutomationProperties.AccessibilityView="Raw"
                                Source="{x:Bind Logo, Mode=OneWay}"
                                Stretch="UniformToFill" />
                     </Grid>
@@ -97,6 +101,7 @@
                     Visibility="{x:Bind Data.Categories.Count, Mode=OneWay, Converter={StaticResource CountToVisibilityConverter}}">
 
             <FontIcon HorizontalAlignment="Center"
+                      AutomationProperties.AccessibilityView="Raw"
                       FontSize="40"
                       Foreground="{ThemeResource TextFillColorSecondary}"
                       Glyph="&#xEA39;" />
@@ -125,6 +130,7 @@
         <Rectangle Grid.Row="1"
                    Height="1"
                    VerticalAlignment="Stretch"
+                   AutomationProperties.AccessibilityView="Raw"
                    Fill="{ThemeResource SystemControlDisabledChromeHighBrush}" />
 
         <Grid Grid.Row="2"
@@ -150,6 +156,7 @@
                            TextAlignment="Left" />
 
                 <Slider x:Name="PositionSlider"
+                        x:Uid="PositionSlider"
                         Grid.Column="1"
                         PreviewKeyDown="PositionSlider_PreviewKeyDown"
                         StepFrequency="1000"
@@ -223,7 +230,7 @@
                         AccessKey="V"
                         ProcessKeyboardAccelerators="VolumeButton_ProcessKeyboardAccelerators"
                         Style="{ThemeResource EllipsisButton}">
-                    <FontIcon Glyph="{x:Bind VolumeSlider.Value, Mode=OneWay, Converter={StaticResource DoubleToVolumeGlyphConverter}}" />
+                    <FontIcon AutomationProperties.AccessibilityView="Raw" Glyph="{x:Bind VolumeSlider.Value, Mode=OneWay, Converter={StaticResource DoubleToVolumeGlyphConverter}}" />
                     <Button.KeyboardAccelerators>
                         <KeyboardAccelerator Key="V" />
                     </Button.KeyboardAccelerators>

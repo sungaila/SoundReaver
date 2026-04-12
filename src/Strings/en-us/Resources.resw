@@ -123,14 +123,11 @@
 	<data name="AppInfoTextBlock.Text" xml:space="preserve">
     <value>About</value>
   </data>
+	<data name="GitHubHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open the GitHub repository</value>
+  </data>
 	<data name="GitHubHyperlinkButton.Content" xml:space="preserve">
     <value>GitHub</value>
-  </data>
-	<data name="IsCrossfadeEnabledSettingsCard.Description" xml:space="preserve">
-    <value>Uses a crossfade effect when switching between the spectral and material variants of a track being played.</value>
-  </data>
-	<data name="IsCrossfadeEnabledSettingsCard.Header" xml:space="preserve">
-    <value>Crossfade effect</value>
   </data>
 	<data name="IsShiftSoundEnabledSettingsCard.Description" xml:space="preserve">
     <value>Plays the shifting sound effect when switching between the spectral and material soundtrack variants.</value>
@@ -139,19 +136,31 @@
     <value>Shifting sound effect</value>
   </data>
 	<data name="IssueSettingsCard.Description" xml:space="preserve">
-    <value>Have you found something that does not work or has been translated incorrectly?</value>
+    <value>Report a bug or suggest an improvement.</value>
   </data>
 	<data name="IssueSettingsCard.Header" xml:space="preserve">
     <value>Report an issue</value>
   </data>
+	<data name="IssueSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Report an issue</value>
+  </data>
+	<data name="IssueSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Opens the GitHub issue tracker in your browser.</value>
+  </data>
 	<data name="LanguageSettingsCard.Header" xml:space="preserve">
     <value>Language</value>
+  </data>
+	<data name="LicenseAppIconAboutHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open DeviantArt about page for the app icons</value>
   </data>
 	<data name="LicenseAppIconAboutHyperlinkButton.Content" xml:space="preserve">
     <value>DeviantArt</value>
   </data>
 	<data name="LicenseAppIconAuthorTextBlock.Text" xml:space="preserve">
     <value>by Conrado de Castro Valise (convalise)</value>
+  </data>
+	<data name="LicenseAppIconGalleryHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open DeviantArt gallery page for the app icons</value>
   </data>
 	<data name="LicenseAppIconGalleryHyperlinkButton.Content" xml:space="preserve">
     <value>Gallery</value>
@@ -165,14 +174,26 @@
 	<data name="LicenseSoundtrackAuthor2TextBlock.Text" xml:space="preserve">
     <value>ripped and remastered by DeeDyne &amp; SalsaGal</value>
   </data>
+	<data name="LicenseSoundtrackDenHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open The Ancient’s Den website</value>
+  </data>
 	<data name="LicenseSoundtrackDenHyperlinkButton.Content" xml:space="preserve">
     <value>The Ancient’s Den</value>
+  </data>
+	<data name="LicenseSoundtrackDriveHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open Google Drive for the soundtrack</value>
   </data>
 	<data name="LicenseSoundtrackDriveHyperlinkButton.Content" xml:space="preserve">
     <value>Google Drive</value>
   </data>
+	<data name="LicenseSoundtrackGitHub1HyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open DeeDyne on GitHub</value>
+  </data>
 	<data name="LicenseSoundtrackGitHub1HyperlinkButton.Content" xml:space="preserve">
     <value>GitHub (DeeDyne)</value>
+  </data>
+	<data name="LicenseSoundtrackGitHub2HyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open SalsaGal on GitHub</value>
   </data>
 	<data name="LicenseSoundtrackGitHub2HyperlinkButton.Content" xml:space="preserve">
     <value>GitHub (SalsaGal)</value>
@@ -189,47 +210,65 @@
 	<data name="SettingsHeaderTextBlock.Text" xml:space="preserve">
     <value>Settings</value>
   </data>
+	<data name="SungailaHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open sungaila.de</value>
+  </data>
 	<data name="SungailaHyperlinkButton.Content" xml:space="preserve">
     <value>sungaila.de</value>
   </data>
 	<data name="VariantToggleSwitch.OffContent" xml:space="preserve">
     <value>Spectral</value>
   </data>
-	<data name="VariantToggleSwitch.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Switch between soundtrack variants</value>
+	<data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Switch between the Spectral and Material variants</value>
   </data>
-	<data name="VariantToggleSwitch.AutomationProperties.Name" xml:space="preserve">
-    <value>Switch between soundtrack variants</value>
+	<data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Soundtrack variant</value>
+  </data>
+	<data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Selects whether the Spectral or Material soundtrack variant is used.</value>
   </data>
 	<data name="VariantToggleSwitch.OnContent" xml:space="preserve">
     <value>Material</value>
   </data>
-	<data name="VolumeSlider.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="VolumeSlider.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Adjust the playback volume</value>
+  </data>
+	<data name="VolumeSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Volume level</value>
+  </data>
+	<data name="VolumeSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Use the arrow keys to change the volume.</value>
+  </data>
+	<data name="VolumeButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Adjust the volume</value>
+  </data>
+	<data name="VolumeButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Volume</value>
   </data>
-	<data name="VolumeSlider.AutomationProperties.Name" xml:space="preserve">
-    <value>Volume</value>
+	<data name="VolumeButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Opens the volume control.</value>
   </data>
-	<data name="VolumeButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Volume</value>
+	<data name="RepeatButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Repeat the current track</value>
   </data>
-	<data name="VolumeButton.AutomationProperties.Name" xml:space="preserve">
-    <value>Volume</value>
-  </data>
-	<data name="RepeatButton.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="RepeatButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Repeat</value>
   </data>
-	<data name="RepeatButton.AutomationProperties.Name" xml:space="preserve">
-    <value>Repeat</value>
+	<data name="RepeatButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Turns repeating of the current track on or off.</value>
   </data>
-	<data name="StopButton.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="StopButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Stop playback</value>
+  </data>
+	<data name="StopButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Stop</value>
   </data>
-	<data name="StopButton.AutomationProperties.Name" xml:space="preserve">
-    <value>Stop</value>
+	<data name="StopButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Stops the current track.</value>
   </data>
-	<data name="PlayButton.ToolTipService.ToolTip" xml:space="preserve">
-    <value>Play/Pause</value>
+	<data name="PlayButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Play or pause the current track</value>
   </data>
 	<data name="NoCategoriesHeaderTextBlock.Text" xml:space="preserve">
     <value>Oops! There is no music to play.</value>
@@ -237,11 +276,17 @@
 	<data name="NoCategoriesHintTextBlock.Text" xml:space="preserve">
     <value>Check if the optional music packages are installed.</value>
   </data>
+	<data name="NoCategoriesRefreshHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Refresh the track list</value>
+  </data>
 	<data name="NoCategoriesRefreshHyperlinkButton.Content" xml:space="preserve">
     <value>Refresh</value>
   </data>
+	<data name="NoCategoriesSettingsHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open Windows app settings</value>
+  </data>
 	<data name="NoCategoriesSettingsHyperlinkButton.Content" xml:space="preserve">
-    <value>Open Windows settings</value>
+    <value>Open Windows app settings</value>
   </data>
 	<data name="VariantToggleSwitch.AccessKey" xml:space="preserve">
     <value>F2</value>
@@ -255,14 +300,20 @@
 	<data name="StopButton.AccessKey" xml:space="preserve">
     <value>S</value>
   </data>
-	<data name="TracksHeaderTextBlock.Text" xml:space="preserve">
-    <value>Tracks</value>
+	<data name="PlayButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Playback</value>
   </data>
-	<data name="PlayButton.AutomationProperties.Name" xml:space="preserve">
-    <value>Play/Pause</value>
+	<data name="PlayButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Starts or pauses playback of the selected track.</value>
+  </data>
+	<data name="LicenseAppIconHomepageHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open Conrado de Castro Valise’s website.</value>
   </data>
 	<data name="LicenseAppIconHomepageHyperlinkButton.Content" xml:space="preserve">
     <value>Website</value>
+  </data>
+	<data name="LicenseAppIconGitHubHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open convalise on GitHub</value>
   </data>
 	<data name="LicenseAppIconGitHubHyperlinkButton.Content" xml:space="preserve">
     <value>GitHub</value>
@@ -273,6 +324,15 @@
 	<data name="WindowsAppSettingsCard.Description" xml:space="preserve">
     <value>Check the Windows app settings for the installed music packs.</value>
   </data>
+	<data name="WindowsAppSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Open Windows app settings</value>
+  </data>
+	<data name="WindowsAppSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Opens the Windows app settings for this application.</value>
+  </data>
+	<data name="MicrosoftStoreHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open the Microsoft Store page</value>
+  </data>
 	<data name="MicrosoftStoreHyperlinkButton.Content" xml:space="preserve">
     <value>Microsoft Store</value>
   </data>
@@ -280,9 +340,36 @@
     <value>This is a fan project. “Legacy of Kain”, “Soul Reaver” and related trademarks are the property of Crystal Dynamics and Embracer Group.</value>
   </data>
 	<data name="PatternCanvasVisibleSettingsCard.Description" xml:space="preserve">
-    <value>Draws the clan banners from Soul Reaver as patterns in the frame.</value>
+    <value>Show the clan banners from Soul Reaver as a background pattern.</value>
   </data>
 	<data name="PatternCanvasVisibleSettingsCard.Header" xml:space="preserve">
     <value>Background pattern</value>
+  </data>
+	<data name="PositionSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Playback position</value>
+  </data>
+	<data name="PositionSlider.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Playback position</value>
+  </data>
+	<data name="PositionSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Use the arrow keys to seek within the current track.</value>
+  </data>
+	<data name="TranslationSettingsCard.Header" xml:space="preserve">
+    <value>Translate this app</value>
+  </data>
+	<data name="TranslationSettingsCard.Description" xml:space="preserve">
+    <value>Help translate the app or suggest translation fixes.</value>
+  </data>
+	<data name="WeblateHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Open Weblate project</value>
+  </data>
+	<data name="WeblateHyperlinkButton.Content" xml:space="preserve">
+    <value>Hosted Weblate</value>
+  </data>
+	<data name="SettingsRestartRequired" xml:space="preserve">
+    <value>The app must be restarted for this setting to take effect.</value>
+  </data>
+	<data name="LanguageComboBox.Width" xml:space="preserve">
+    <value>200</value>
   </data>
 </root>

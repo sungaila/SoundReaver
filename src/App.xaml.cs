@@ -1,4 +1,5 @@
 ﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using Microsoft.Windows.ApplicationModel.Resources;
 using Windows.Storage;
 
@@ -15,12 +16,22 @@ namespace Sungaila.SoundReaver
         public App()
         {
             InitializeComponent();
+            UnhandledException += Application_UnhandledException;
         }
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
             MainWindow = new MainWindow();
             MainWindow.Activate();
+        }
+
+        private void Application_UnhandledException(object sender, Microsoft.UI.Xaml.UnhandledExceptionEventArgs e)
+        {
+            if (MainWindow == null)
+                return;
+
+            MainWindow.ShowInfoBar(e.Message, InfoBarSeverity.Error);
+            e.Handled = true;
         }
     }
 }

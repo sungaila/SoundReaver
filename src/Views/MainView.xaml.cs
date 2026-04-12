@@ -11,6 +11,8 @@ namespace Sungaila.SoundReaver.Views
 {
     public sealed partial class MainView : Page
     {
+        internal InfoBar? InfoBar => Content.FindDescendant<InfoBar>();
+
         public MainView()
         {
             InitializeComponent();
@@ -67,12 +69,12 @@ namespace Sungaila.SoundReaver.Views
                 args.RecommendedNavigationTransitionInfo);
         }
 
-        private void RootFrame_SizeChanged(object sender, SizeChangedEventArgs e)
+        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (App.MainWindow == null || App.MainWindow.CanvasControl == null || App.MainWindow.NavigationView == null)
                 return;
 
-            App.MainWindow.CanvasControl.Width = App.MainWindow.NavigationView.ActualWidth - RootFrame.ActualWidth;
+            App.MainWindow.CanvasControl.Width = Math.Max(App.MainWindow.NavigationView.ActualWidth - RootFrame.ActualWidth, 0);
         }
     }
 }

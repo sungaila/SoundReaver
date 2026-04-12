@@ -1,3 +1,4 @@
+using CommunityToolkit.WinUI.Controls;
 using CommunityToolkit.WinUI.Helpers;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -36,6 +37,12 @@ namespace Sungaila.SoundReaver.Views
             AuthorTextBlock.Text = author;
         }
 
+        private void ComboBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is ComboBox comboBox)
+                comboBox.SelectionChanged += (_, _) => App.MainWindow?.ShowInfoBar(App.ResourceLoader.GetString("SettingsRestartRequired"), InfoBarSeverity.Warning);
+        }
+
         internal static readonly Uri WindowsAppSettingsUri = new("ms-settings:appsfeatures-app");
 
         private async void WindowsAppSettingsCard_Click(object sender, RoutedEventArgs e)
@@ -43,11 +50,15 @@ namespace Sungaila.SoundReaver.Views
             await Launcher.LaunchUriAsync(WindowsAppSettingsUri);
         }
 
-        private static readonly Uri _githubIssuesUri = new("https://github.com/sungaila/SoundReaver/issues");
-
-        private async void IssueSettingsCard_Click(object sender, RoutedEventArgs e)
+        private async void SettingsCard_Click(object sender, RoutedEventArgs e)
         {
-            await Launcher.LaunchUriAsync(_githubIssuesUri);
+            if (sender is not SettingsCard settingsCard)
+                return;
+
+            if (!Uri.TryCreate(settingsCard.ActionIconToolTip, UriKind.Absolute, out var uri))
+                return;
+
+            await Launcher.LaunchUriAsync(uri);
         }
     }
 }
