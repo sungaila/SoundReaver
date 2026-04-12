@@ -123,4 +123,10 @@
   <data name="LanguageComboBox.Width" xml:space="preserve">
     <value>200</value>
   </data>
+  <data name="SungailaHyperlinkButton.Content" xml:space="preserve">
+    <value>sungaila.de</value>
+  </data>
+  <data name="GitHubHyperlinkButton.Content" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
 </root>
