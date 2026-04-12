@@ -167,13 +167,13 @@
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://www.convalise.com/"
                                                  Style="{StaticResource ExternalHyperlinkStyle}"
-                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconHomepageHyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseAppIconGitHubHyperlinkButton"
                                                  x:Uid="LicenseAppIconGitHubHyperlinkButton"
                                                  VerticalAlignment="Center"
                                                  NavigateUri="https://github.com/convalise"
                                                  Style="{StaticResource ExternalHyperlinkStyle}"
-                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconAboutHyperlinkButton.NavigateUri, Mode=OneTime}" />
+                                                 ToolTipService.ToolTip="{x:Bind LicenseAppIconGitHubHyperlinkButton.NavigateUri, Mode=OneTime}" />
                                 <HyperlinkButton x:Name="LicenseAppIconAboutHyperlinkButton"
                                                  x:Uid="LicenseAppIconAboutHyperlinkButton"
                                                  VerticalAlignment="Center"

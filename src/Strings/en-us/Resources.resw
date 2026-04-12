@@ -124,16 +124,10 @@
     <value>About</value>
   </data>
 	<data name="GitHubHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Open GitHub repository</value>
+    <value>Open the GitHub repository</value>
   </data>
 	<data name="GitHubHyperlinkButton.Content" xml:space="preserve">
     <value>GitHub</value>
-  </data>
-	<data name="IsCrossfadeEnabledSettingsCard.Description" xml:space="preserve">
-    <value>Uses a crossfade effect when switching between the spectral and material variants of a track being played.</value>
-  </data>
-	<data name="IsCrossfadeEnabledSettingsCard.Header" xml:space="preserve">
-    <value>Crossfade effect</value>
   </data>
 	<data name="IsShiftSoundEnabledSettingsCard.Description" xml:space="preserve">
     <value>Plays the shifting sound effect when switching between the spectral and material soundtrack variants.</value>
@@ -181,7 +175,7 @@
     <value>ripped and remastered by DeeDyne &amp; SalsaGal</value>
   </data>
 	<data name="LicenseSoundtrackDenHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Open The Ancient’s Den</value>
+    <value>Open The Ancient’s Den website</value>
   </data>
 	<data name="LicenseSoundtrackDenHyperlinkButton.Content" xml:space="preserve">
     <value>The Ancient’s Den</value>
@@ -193,13 +187,13 @@
     <value>Google Drive</value>
   </data>
 	<data name="LicenseSoundtrackGitHub1HyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Open GitHub for DeeDyne</value>
+    <value>Open DeeDyne on GitHub</value>
   </data>
 	<data name="LicenseSoundtrackGitHub1HyperlinkButton.Content" xml:space="preserve">
     <value>GitHub (DeeDyne)</value>
   </data>
 	<data name="LicenseSoundtrackGitHub2HyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Open GitHub for SalsaGal</value>
+    <value>Open SalsaGal on GitHub</value>
   </data>
 	<data name="LicenseSoundtrackGitHub2HyperlinkButton.Content" xml:space="preserve">
     <value>GitHub (SalsaGal)</value>
@@ -225,7 +219,7 @@
 	<data name="VariantToggleSwitch.OffContent" xml:space="preserve">
     <value>Spectral</value>
   </data>
-	<data name="VariantToggleSwitch.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Switch between the Spectral and Material variants</value>
   </data>
 	<data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -237,7 +231,7 @@
 	<data name="VariantToggleSwitch.OnContent" xml:space="preserve">
     <value>Material</value>
   </data>
-	<data name="VolumeSlider.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="VolumeSlider.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Adjust the playback volume</value>
   </data>
 	<data name="VolumeSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -246,7 +240,7 @@
 	<data name="VolumeSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>Use the arrow keys to change the volume.</value>
   </data>
-	<data name="VolumeButton.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="VolumeButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Adjust the volume</value>
   </data>
 	<data name="VolumeButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -255,7 +249,7 @@
 	<data name="VolumeButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>Opens the volume control.</value>
   </data>
-	<data name="RepeatButton.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="RepeatButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Repeat the current track</value>
   </data>
 	<data name="RepeatButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -264,7 +258,7 @@
 	<data name="RepeatButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>Turns repeating of the current track on or off.</value>
   </data>
-	<data name="StopButton.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="StopButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Stop playback</value>
   </data>
 	<data name="StopButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -273,7 +267,7 @@
 	<data name="StopButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>Stops the current track.</value>
   </data>
-	<data name="PlayButton.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="PlayButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Play or pause the current track</value>
   </data>
 	<data name="NoCategoriesHeaderTextBlock.Text" xml:space="preserve">
@@ -306,9 +300,6 @@
 	<data name="StopButton.AccessKey" xml:space="preserve">
     <value>S</value>
   </data>
-	<data name="TracksHeaderTextBlock.Text" xml:space="preserve">
-    <value>Tracks</value>
-  </data>
 	<data name="PlayButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Playback</value>
   </data>
@@ -316,13 +307,13 @@
     <value>Starts or pauses playback of the selected track.</value>
   </data>
 	<data name="LicenseAppIconHomepageHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Open website of Conrado de Castro Valise.</value>
+    <value>Open Conrado de Castro Valise’s website.</value>
   </data>
 	<data name="LicenseAppIconHomepageHyperlinkButton.Content" xml:space="preserve">
     <value>Website</value>
   </data>
 	<data name="LicenseAppIconGitHubHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Open GitHub for convalise</value>
+    <value>Open convalise on GitHub</value>
   </data>
 	<data name="LicenseAppIconGitHubHyperlinkButton.Content" xml:space="preserve">
     <value>GitHub</value>
@@ -340,7 +331,7 @@
     <value>Opens the Windows app settings for this application.</value>
   </data>
 	<data name="MicrosoftStoreHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
-    <value>Open Microsoft Store page</value>
+    <value>Open the Microsoft Store page</value>
   </data>
 	<data name="MicrosoftStoreHyperlinkButton.Content" xml:space="preserve">
     <value>Microsoft Store</value>
@@ -357,7 +348,7 @@
 	<data name="PositionSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Playback position</value>
   </data>
-	<data name="PositionSlider.ToolTipService.ToolTip" xml:space="preserve">
+	<data name="PositionSlider.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
     <value>Playback position</value>
   </data>
 	<data name="PositionSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">

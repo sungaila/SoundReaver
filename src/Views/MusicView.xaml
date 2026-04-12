@@ -101,6 +101,7 @@
                     Visibility="{x:Bind Data.Categories.Count, Mode=OneWay, Converter={StaticResource CountToVisibilityConverter}}">
 
             <FontIcon HorizontalAlignment="Center"
+                      AutomationProperties.AccessibilityView="Raw"
                       FontSize="40"
                       Foreground="{ThemeResource TextFillColorSecondary}"
                       Glyph="&#xEA39;" />
@@ -229,7 +230,7 @@
                         AccessKey="V"
                         ProcessKeyboardAccelerators="VolumeButton_ProcessKeyboardAccelerators"
                         Style="{ThemeResource EllipsisButton}">
-                    <FontIcon Glyph="{x:Bind VolumeSlider.Value, Mode=OneWay, Converter={StaticResource DoubleToVolumeGlyphConverter}}" />
+                    <FontIcon AutomationProperties.AccessibilityView="Raw" Glyph="{x:Bind VolumeSlider.Value, Mode=OneWay, Converter={StaticResource DoubleToVolumeGlyphConverter}}" />
                     <Button.KeyboardAccelerators>
                         <KeyboardAccelerator Key="V" />
                     </Button.KeyboardAccelerators>
