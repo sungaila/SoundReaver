@@ -51,15 +51,13 @@
             <controls:SettingsCard x:Uid="LanguageSettingsCard"
                                    Grid.Row="2"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xF2B7;}">
-                <ComboBox Width="200"
+                <ComboBox x:Uid="LanguageComboBox"
+                          AutomationProperties.Name="{Binding Header, RelativeSource={RelativeSource Mode=TemplatedParent}}"
+                          DisplayMemberPath="DisplayName"
                           ItemsSource="{x:Bind Data.Settings.AvailableLanguages}"
-                          SelectedItem="{x:Bind Data.Settings.SelectedLanguage, Mode=TwoWay}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate x:DataType="v:LanguageViewModel">
-                            <TextBlock Text="{x:Bind NativeName}" />
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
+                          Loaded="ComboBox_Loaded"
+                          SelectedItem="{x:Bind Data.Settings.SelectedLanguage, Mode=TwoWay}" />
+
             </controls:SettingsCard>
 
             <controls:SettingsCard x:Uid="IsShiftSoundEnabledSettingsCard"

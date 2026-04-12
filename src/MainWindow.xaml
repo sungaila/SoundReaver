@@ -48,6 +48,6 @@
                        Title="{x:Bind Title, Mode=OneTime}"
                        Grid.Row="0" />
 
-        <v:MainView Grid.Row="1" />
+        <v:MainView x:Name="MainView" Grid.Row="1" />
     </Grid>
 </Window>

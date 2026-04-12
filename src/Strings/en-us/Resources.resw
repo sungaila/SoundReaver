@@ -366,4 +366,10 @@
 	<data name="WeblateHyperlinkButton.Content" xml:space="preserve">
     <value>Hosted Weblate</value>
   </data>
+	<data name="SettingsRestartRequired" xml:space="preserve">
+    <value>The app must be restarted for this setting to take effect.</value>
+  </data>
+	<data name="LanguageComboBox.Width" xml:space="preserve">
+    <value>200</value>
+  </data>
 </root>

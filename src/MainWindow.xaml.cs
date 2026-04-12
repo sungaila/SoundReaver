@@ -88,6 +88,13 @@ namespace Sungaila.SoundReaver
             });
         }
 
+        public void ShowInfoBar(string message, InfoBarSeverity severity)
+        {
+            MainView.InfoBar.Severity = severity;
+            MainView.InfoBar.Message = message;
+            MainView.InfoBar.IsOpen = true;
+        }
+
         CanvasBitmap? _canvasBitmap;
 
         private void PatternCanvas_CreateResources(CanvasControl sender, CanvasCreateResourcesEventArgs args)
