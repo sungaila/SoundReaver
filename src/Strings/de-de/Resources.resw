@@ -375,4 +375,7 @@
   <data name="WeblateHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
     <value>Weblate-Projekt öffnen</value>
   </data>
+	<data name="NoCategoriesContainer.Width" xml:space="preserve">
+    <value>440</value>
+  </data>
 </root>

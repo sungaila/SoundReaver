@@ -375,4 +375,7 @@
   <data name="LanguageComboBox.Width" xml:space="preserve">
     <value>200</value>
   </data>
+	<data name="NoCategoriesContainer.Width" xml:space="preserve">
+    <value>380</value>
+  </data>
 </root>
