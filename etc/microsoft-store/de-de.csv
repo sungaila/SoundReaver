@@ -1,6 +1,6 @@
 "location","source","target","ID","fuzzy","context","translator_comments","developer_comments"
 "2","A music playback app for the Legacy of Kain: Soul Reaver soundtrack.","","","","","",""
-"3","• Update WindowsAppSDK and NuGet packages.","","","","","",""
+"3","• Update WindowsAppSDK and NuGet packages.","• Aktualisieren von WindowsAppSDK und NuGet-Paketen.","","False","","",""
 "4","Sound Reaver","Sound Reaver","","False","","",""
 "8","A music playback app for the Legacy of Kain: Soul Reaver soundtrack.","Eine Musikwiedergabe-App für den Soundtrack von „Legacy of Kain: Soul Reaver“.","","False","","",""
 "9","David Sungaila","David Sungaila","","","","",""
