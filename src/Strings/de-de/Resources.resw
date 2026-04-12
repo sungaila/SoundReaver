@@ -129,4 +129,250 @@
   <data name="GitHubHyperlinkButton.Content" xml:space="preserve">
     <value>GitHub</value>
   </data>
+  <data name="IssueSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnet den GitHub-Issue-Tracker in Ihrem Browser.</value>
+  </data>
+  <data name="SettingsRestartRequired" xml:space="preserve">
+    <value>Die Anwendung muss neu gestartet werden, damit diese Einstellung wirksam wird.</value>
+  </data>
+  <data name="AppInfoTextBlock.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="GitHubHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>GitHub-Repository öffnen</value>
+  </data>
+  <data name="IsShiftSoundEnabledSettingsCard.Description" xml:space="preserve">
+    <value>Spielt beim Wechsel zwischen der spektralen und der materiellen Soundtrack-Variante den Soundeffekt des Ebenenwechsels ab.</value>
+  </data>
+  <data name="IsShiftSoundEnabledSettingsCard.Header" xml:space="preserve">
+    <value>Wechselsoundeffekt</value>
+  </data>
+  <data name="IssueSettingsCard.Description" xml:space="preserve">
+    <value>Melden Sie einen Fehler oder schlagen Sie eine Verbesserung vor.</value>
+  </data>
+  <data name="IssueSettingsCard.Header" xml:space="preserve">
+    <value>Ein Problem melden</value>
+  </data>
+  <data name="IssueSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Ein Problem melden</value>
+  </data>
+  <data name="LicenseAppIconAboutHyperlinkButton.Content" xml:space="preserve">
+    <value>DeviantArt</value>
+  </data>
+  <data name="LicenseSoundtrackAuthor1TextBlock.Text" xml:space="preserve">
+    <value>komponiert von Kurt Harland</value>
+  </data>
+  <data name="LicenseSoundtrackAuthor2TextBlock.Text" xml:space="preserve">
+    <value>kopiert und neu gemastert von DeeDyne &amp; SalsaGal</value>
+  </data>
+  <data name="LicenseSoundtrackDenHyperlinkButton.Content" xml:space="preserve">
+    <value>The Ancient’s Den</value>
+  </data>
+  <data name="LicenseSoundtrackDriveHyperlinkButton.Content" xml:space="preserve">
+    <value>Google Drive</value>
+  </data>
+  <data name="LicenseSoundtrackGitHub1HyperlinkButton.Content" xml:space="preserve">
+    <value>GitHub (DeeDyne)</value>
+  </data>
+  <data name="LanguageSettingsCard.Header" xml:space="preserve">
+    <value>Sprache</value>
+  </data>
+  <data name="LicenseAppIconAboutHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie die „Über“-Seite auf DeviantArt für die App-Symbole</value>
+  </data>
+  <data name="LicenseAppIconAuthorTextBlock.Text" xml:space="preserve">
+    <value>von Conrado de Castro Valise (convalise)</value>
+  </data>
+  <data name="LicenseAppIconGalleryHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie die DeviantArt-Galerie-Seite für die App-Symbole</value>
+  </data>
+  <data name="LicenseAppIconGalleryHyperlinkButton.Content" xml:space="preserve">
+    <value>Galerie</value>
+  </data>
+  <data name="LicenseAppIconTextBlock.Text" xml:space="preserve">
+    <value>App-, Paket- und Kapitel-Symbole</value>
+  </data>
+  <data name="LicenseSoundtrackDenHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie die Website von „The Ancient’s Den“</value>
+  </data>
+  <data name="LicenseSoundtrackDriveHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie Google Drive für den Soundtrack</value>
+  </data>
+  <data name="LicenseSoundtrackGitHub1HyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>DeeDyne auf GitHub öffnen</value>
+  </data>
+  <data name="LicenseSoundtrackGitHub2HyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie SalsaGal auf GitHub</value>
+  </data>
+  <data name="SettingsHeaderTextBlock.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="SungailaHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie sungaila.de</value>
+  </data>
+  <data name="VariantToggleSwitch.OffContent" xml:space="preserve">
+    <value>Spektral</value>
+  </data>
+  <data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wechseln Sie zwischen den Varianten „Spektral“ und „materiell“</value>
+  </data>
+  <data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Soundtrack-Variante</value>
+  </data>
+  <data name="VariantToggleSwitch.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Legt fest, ob die Soundtrack-Variante „spektral“ oder „materiell“ verwendet wird.</value>
+  </data>
+  <data name="VariantToggleSwitch.OnContent" xml:space="preserve">
+    <value>Materiell</value>
+  </data>
+  <data name="VolumeSlider.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Passen Sie die Wiedergabelautstärke an</value>
+  </data>
+  <data name="VolumeSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Lautstärke</value>
+  </data>
+  <data name="VolumeSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Verwenden Sie die Pfeiltasten, um die Lautstärke zu ändern.</value>
+  </data>
+  <data name="VolumeButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Lautstärke anpassen</value>
+  </data>
+  <data name="VolumeButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnet die Lautstärkeregelung.</value>
+  </data>
+  <data name="RepeatButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wiederholen Sie den aktuellen Titel</value>
+  </data>
+  <data name="RepeatButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Wiederholen</value>
+  </data>
+  <data name="RepeatButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Schaltet die Wiederholung des aktuellen Titels ein oder aus.</value>
+  </data>
+  <data name="StopButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wiedergabe anhalten</value>
+  </data>
+  <data name="StopButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Stopp</value>
+  </data>
+  <data name="NoCategoriesHeaderTextBlock.Text" xml:space="preserve">
+    <value>Hoppla! Es gibt keine Musik zum Abspielen.</value>
+  </data>
+  <data name="NoCategoriesHintTextBlock.Text" xml:space="preserve">
+    <value>Überprüfen Sie, ob die optionalen Musikpakete installiert sind.</value>
+  </data>
+  <data name="NoCategoriesRefreshHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Aktualisieren Sie die Titelliste</value>
+  </data>
+  <data name="NoCategoriesRefreshHyperlinkButton.Content" xml:space="preserve">
+    <value>Aktualisieren</value>
+  </data>
+  <data name="NoCategoriesSettingsHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Einstellungen der Windows-App öffnen</value>
+  </data>
+  <data name="NoCategoriesSettingsHyperlinkButton.Content" xml:space="preserve">
+    <value>Einstellungen der Windows-App öffnen</value>
+  </data>
+  <data name="PlayButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Wiedergabe</value>
+  </data>
+  <data name="PlayButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Startet oder pausiert die Wiedergabe des ausgewählten Titels.</value>
+  </data>
+  <data name="LicenseAppIconHomepageHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie die Website von Conrado de Castro Valise.</value>
+  </data>
+  <data name="LicenseAppIconGitHubHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie convalise auf GitHub</value>
+  </data>
+  <data name="WindowsAppSettingsCard.Header" xml:space="preserve">
+    <value>Einstellungen der Windows-App öffnen</value>
+  </data>
+  <data name="WindowsAppSettingsCard.Description" xml:space="preserve">
+    <value>Überprüfen Sie die Windows-App-Einstellungen auf installierte Musikpakete.</value>
+  </data>
+  <data name="WindowsAppSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Einstellungen der Windows-App öffnen</value>
+  </data>
+  <data name="WindowsAppSettingsCard.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnet die Windows-App-Einstellungen für diese Anwendung.</value>
+  </data>
+  <data name="MicrosoftStoreHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Öffnen Sie die Microsoft Store-Seite</value>
+  </data>
+  <data name="TrademarkTextBlock.Text" xml:space="preserve">
+    <value>Dies ist ein Fanprojekt. „Legacy of Kain“, „Soul Reaver“ und zugehörige Marken sind Eigentum von Crystal Dynamics und der Embracer Group.</value>
+  </data>
+  <data name="PatternCanvasVisibleSettingsCard.Description" xml:space="preserve">
+    <value>Zeigen Sie die Clan-Banner aus Soul Reaver als Hintergrundmuster an.</value>
+  </data>
+  <data name="LicenseSoundtrackGitHub2HyperlinkButton.Content" xml:space="preserve">
+    <value>GitHub (SalsaGal)</value>
+  </data>
+  <data name="LicenseSoundtrackTextBlock.Text" xml:space="preserve">
+    <value>Soundtrack</value>
+  </data>
+  <data name="LicensesTextBlock.Text" xml:space="preserve">
+    <value>Drittanbieter-Inhalte, die mit Genehmigung verwendet werden</value>
+  </data>
+  <data name="NavigationViewItem_MusicView.Content" xml:space="preserve">
+    <value>Titel</value>
+  </data>
+  <data name="VolumeButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Lautstärke</value>
+  </data>
+  <data name="VolumeButton.AccessKey" xml:space="preserve">
+    <value>V</value>
+  </data>
+  <data name="StopButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Stoppt den aktuellen Titel.</value>
+  </data>
+  <data name="PlayButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Aktuellen Titel abspielen oder stoppen</value>
+  </data>
+  <data name="VariantToggleSwitch.AccessKey" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="RepeatButton.AccessKey" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="PlayButton.AccessKey" xml:space="preserve">
+    <value>P</value>
+  </data>
+  <data name="StopButton.AccessKey" xml:space="preserve">
+    <value>S</value>
+  </data>
+  <data name="LicenseAppIconHomepageHyperlinkButton.Content" xml:space="preserve">
+    <value>Webseite</value>
+  </data>
+  <data name="LicenseAppIconGitHubHyperlinkButton.Content" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="MicrosoftStoreHyperlinkButton.Content" xml:space="preserve">
+    <value>Microsoft Store</value>
+  </data>
+  <data name="TranslationSettingsCard.Header" xml:space="preserve">
+    <value>Diese App übersetzen</value>
+  </data>
+  <data name="TranslationSettingsCard.Description" xml:space="preserve">
+    <value>Beim Übersetzen der App helfen oder Übersetzungsvorschläge machen.</value>
+  </data>
+  <data name="WeblateHyperlinkButton.Content" xml:space="preserve">
+    <value>Hosted Weblate</value>
+  </data>
+  <data name="PatternCanvasVisibleSettingsCard.Header" xml:space="preserve">
+    <value>Hintergrundmuster</value>
+  </data>
+  <data name="PositionSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Wiedergabeposition</value>
+  </data>
+  <data name="PositionSlider.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Wiedergabeposition</value>
+  </data>
+  <data name="PositionSlider.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Verwenden Sie die Pfeiltasten, um innerhalb des aktuellen Titels zu navigieren.</value>
+  </data>
+  <data name="WeblateHyperlinkButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Weblate-Projekt öffnen</value>
+  </data>
 </root>
