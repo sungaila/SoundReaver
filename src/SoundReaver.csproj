@@ -46,8 +46,8 @@
 		<XmlResolverIsNetworkingEnabledByDefault>false</XmlResolverIsNetworkingEnabledByDefault>
 		<_AggressiveAttributeTrimming>true</_AggressiveAttributeTrimming>
 		<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
-		<OptimizationPreference>Speed</OptimizationPreference>
-		<IlcOptimizationPreference>Speed</IlcOptimizationPreference>
+		<OptimizationPreference>Size</OptimizationPreference>
+		<IlcOptimizationPreference>Size</IlcOptimizationPreference>
 		<InvariantGlobalization>false</InvariantGlobalization>
 		<MetricsSupport>false</MetricsSupport>
 		<EventSourceSupport>false</EventSourceSupport>
@@ -58,6 +58,8 @@
 		<UseSizeOptimizedLinq>true</UseSizeOptimizedLinq>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<CsWinRTAotWarningLevel>2</CsWinRTAotWarningLevel>
+		<TrimmerSingleWarn>false</TrimmerSingleWarn>
+		<EnableAotAnalyzer>true</EnableAotAnalyzer>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -121,7 +123,6 @@
 
 	<!-- Publish Properties -->
 	<PropertyGroup>
-		<PackageCertificateThumbprint>C3E57D2AA5E3D231220AA028E49BF2A9B1EE8AB6</PackageCertificateThumbprint>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<GenerateAppInstallerFile>False</GenerateAppInstallerFile>
 		<AppxPackageSigningTimestampServerUrl>http://time.certum.pl</AppxPackageSigningTimestampServerUrl>
