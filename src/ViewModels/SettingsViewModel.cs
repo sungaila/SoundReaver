@@ -1,6 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using Sungaila.SoundReaver.Commands;
+using Sungaila.SoundReaver.Enums;
+using Sungaila.SoundReaver.Manager;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
+using System.Windows.Input;
 using Windows.Globalization;
 using Windows.Storage;
 using WinRT;
@@ -10,6 +14,92 @@ namespace Sungaila.SoundReaver.ViewModels
     [GeneratedBindableCustomProperty]
     public partial class SettingsViewModel : ViewModel
     {
+        public static readonly bool IsManagedByMicrosoftStore = AutoUpdateManager.IsManagedByMicrosoftStore;
+
+        public static readonly bool IsManagedByAppInstaller = AutoUpdateManager.IsManagedByAppInstaller;
+
+        public Frequency AutoUpdateFrequency
+        {
+            get => AutoUpdateManager.AutoUpdateFrequency;
+            set
+            {
+                AutoUpdateManager.AutoUpdateFrequency = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(IsAutoUpdateWeekly));
+                OnPropertyChanged(nameof(IsAutoUpdateDaily));
+                OnPropertyChanged(nameof(IsAutoUpdateHourly));
+                OnPropertyChanged(nameof(IsAutoUpdateOnLaunch));
+                OnPropertyChanged(nameof(IsAutoUpdateOff));
+            }
+        }
+
+        public bool IsAutoUpdateWeekly
+        {
+            get => AutoUpdateFrequency == Frequency.Weekly;
+            set
+            {
+                if (!value)
+                    return;
+
+                AutoUpdateFrequency = Frequency.Weekly;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsAutoUpdateDaily
+        {
+            get => AutoUpdateFrequency == Frequency.Daily;
+            set
+            {
+                if (!value)
+                    return;
+
+                AutoUpdateFrequency = Frequency.Daily;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsAutoUpdateHourly
+        {
+            get => AutoUpdateFrequency == Frequency.Hourly;
+            set
+            {
+                if (!value)
+                    return;
+
+                AutoUpdateFrequency = Frequency.Hourly;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsAutoUpdateOnLaunch
+        {
+            get => AutoUpdateFrequency == Frequency.OnLaunch;
+            set
+            {
+                if (!value)
+                    return;
+
+                AutoUpdateFrequency = Frequency.OnLaunch;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsAutoUpdateOff
+        {
+            get => AutoUpdateFrequency == Frequency.Off;
+            set
+            {
+                if (!value)
+                    return;
+
+                AutoUpdateFrequency = Frequency.Off;
+                OnPropertyChanged();
+            }
+        }
+
+        public ICommand CheckForUpdatesCommand { get; } = AutoUpdateCommands.CheckForUpdates;
+
         private LanguageViewModel _selectedLanguage = new CultureInfo(ApplicationLanguages.PrimaryLanguageOverride);
 
         public LanguageViewModel SelectedLanguage

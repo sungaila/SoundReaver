@@ -59,49 +59,49 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
     <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" />
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string" />
-							<xsd:attribute name="type" type="xsd:string" />
-							<xsd:attribute name="mimetype" type="xsd:string" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string" />
-							<xsd:attribute name="name" type="xsd:string" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-							<xsd:attribute ref="xml:space" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
       </xsd:complexType>
     </xsd:element>
   </xsd:schema>
@@ -380,5 +380,61 @@
   </data>
   <data name="VariantToggleSwitch.Width" xml:space="preserve">
     <value>110</value>
+  </data>
+  <data name="AutoUpdateSettingsCard.Description" xml:space="preserve">
+    <value>Diese App kann automatisch nach Updates suchen oder dir eine manuelle Suche ermöglichen.</value>
+  </data>
+  <data name="AutoUpdateSettingsCard.Header" xml:space="preserve">
+    <value>Updates über App Installer</value>
+  </data>
+  <data name="CheckForUpdatesSplitButton.Content" xml:space="preserve">
+    <value>Nach Updates suchen</value>
+  </data>
+  <data name="CheckForUpdatesWeeklyRadioMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Wöchentlich</value>
+  </data>
+  <data name="CheckForUpdatesDailyRadioMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Täglich</value>
+  </data>
+  <data name="CheckForUpdatesHourlyRadioMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Stündlich</value>
+  </data>
+  <data name="CheckForUpdatesOnLaunchRadioMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Beim Start</value>
+  </data>
+  <data name="CheckForUpdatesOffRadioMenuFlyoutItem.Text" xml:space="preserve">
+    <value>Aus</value>
+  </data>
+  <data name="PackageUpdateAvailability+Unknown" xml:space="preserve">
+    <value>Es kann nicht nach Updates gesucht werden, weil diese App nicht von App Installer verwaltet wird.</value>
+  </data>
+  <data name="PackageUpdateAvailability+NoUpdates" xml:space="preserve">
+    <value>Du bist auf dem neuesten Stand.</value>
+  </data>
+  <data name="PackageUpdateAvailability+Available" xml:space="preserve">
+    <value>Ein Update ist verfügbar.</value>
+  </data>
+  <data name="PackageUpdateAvailability+Required" xml:space="preserve">
+    <value>Ein Update ist verfügbar und muss installiert werden.</value>
+  </data>
+  <data name="PackageUpdateAvailability+Error" xml:space="preserve">
+    <value>Nach Updates konnte nicht gesucht werden.</value>
+  </data>
+  <data name="ContentDialogCancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="ContentDialogInstall" xml:space="preserve">
+    <value>Installieren</value>
+  </data>
+  <data name="UpdateAvailableContentDialogTitle" xml:space="preserve">
+    <value>Update verfügbar</value>
+  </data>
+	<data name="UpdateAvailableContentDialogContent" xml:space="preserve">
+    <value>Das Update wird im Hintergrund installiert. Die App wird nach Abschluss automatisch neu gestartet.</value>
+  </data>
+	<data name="DeploymentProgress" xml:space="preserve">
+    <value>{0} des Updates installiert.
+
+Die App wird nach Abschluss automatisch neu gestartet.</value>
   </data>
 </root>

@@ -7,10 +7,17 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:e="using:Microsoft.UI.Xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:tkconverters="using:CommunityToolkit.WinUI.Converters"
       xmlns:ui="using:CommunityToolkit.WinUI"
       xmlns:v="using:Sungaila.SoundReaver.ViewModels"
       d:DataContext="{d:DesignInstance Type=v:AppViewModel}"
       mc:Ignorable="d">
+    <Page.Resources>
+        <tkconverters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+        <tkconverters:BoolToVisibilityConverter x:Key="BoolToVisibilityReversedConverter"
+                                                FalseValue="Visible"
+                                                TrueValue="Collapsed" />
+    </Page.Resources>
 
     <ScrollView DataContext="{x:Bind Data.Settings}"
                 HorizontalScrollMode="Disabled"
@@ -24,11 +31,11 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
@@ -73,14 +80,16 @@
             </controls:SettingsCard>
 
             <controls:SettingsCard x:Uid="WindowsAppSettingsCard"
-                                   Grid.Row="8"
+                                   Grid.Row="7"
+                                   Margin="0,5,0,0"
                                    ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
                                    Click="WindowsAppSettingsCard_Click"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xE71D;}"
-                                   IsClickEnabled="True" />
+                                   IsClickEnabled="True"
+                                   Visibility="{x:Bind v:SettingsViewModel.IsManagedByMicrosoftStore, Mode=OneTime, Converter={StaticResource BoolToVisibilityReversedConverter}}" />
 
             <controls:SettingsCard x:Uid="IssueSettingsCard"
-                                   Grid.Row="10"
+                                   Grid.Row="9"
                                    ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
                                    ActionIconToolTip="https://github.com/sungaila/SoundReaver/issues"
                                    Click="SettingsCard_Click"
@@ -88,12 +97,33 @@
                                    IsClickEnabled="True" />
 
             <controls:SettingsCard x:Uid="TranslationSettingsCard"
-                                   Grid.Row="12"
+                                   Grid.Row="11"
                                    ActionIcon="{ui:FontIcon Glyph=&#xE8A7;}"
                                    ActionIconToolTip="https://hosted.weblate.org/engage/soundreaver/"
                                    Click="SettingsCard_Click"
                                    HeaderIcon="{ui:FontIcon Glyph=&#xF87B;}"
                                    IsClickEnabled="True" />
+
+            <controls:SettingsCard x:Uid="AutoUpdateSettingsCard"
+                                   Grid.Row="12"
+                                   Margin="0,5,0,0"
+                                   HeaderIcon="{ui:FontIcon Glyph=&#xE895;}"
+                                   Visibility="{x:Bind v:SettingsViewModel.IsManagedByAppInstaller, Mode=OneTime, Converter={StaticResource BoolToVisibilityConverter}}">
+                <SplitButton x:Uid="CheckForUpdatesSplitButton"
+                             Command="{x:Bind Data.Settings.CheckForUpdatesCommand}"
+                             CommandParameter="{x:Bind Data.Settings}">
+                    <SplitButton.Flyout>
+                        <MenuFlyout>
+                            <RadioMenuFlyoutItem x:Uid="CheckForUpdatesWeeklyRadioMenuFlyoutItem" IsChecked="{x:Bind Data.Settings.IsAutoUpdateWeekly, Mode=TwoWay}" />
+                            <RadioMenuFlyoutItem x:Uid="CheckForUpdatesDailyRadioMenuFlyoutItem" IsChecked="{x:Bind Data.Settings.IsAutoUpdateDaily, Mode=TwoWay}" />
+                            <RadioMenuFlyoutItem x:Uid="CheckForUpdatesHourlyRadioMenuFlyoutItem" IsChecked="{x:Bind Data.Settings.IsAutoUpdateHourly, Mode=TwoWay}" />
+                            <RadioMenuFlyoutItem x:Uid="CheckForUpdatesOnLaunchRadioMenuFlyoutItem" IsChecked="{x:Bind Data.Settings.IsAutoUpdateOnLaunch, Mode=TwoWay}" />
+                            <MenuFlyoutSeparator />
+                            <RadioMenuFlyoutItem x:Uid="CheckForUpdatesOffRadioMenuFlyoutItem" IsChecked="{x:Bind Data.Settings.IsAutoUpdateOff, Mode=TwoWay}" />
+                        </MenuFlyout>
+                    </SplitButton.Flyout>
+                </SplitButton>
+            </controls:SettingsCard>
 
             <TextBlock x:Uid="AppInfoTextBlock"
                        Grid.Row="14"
