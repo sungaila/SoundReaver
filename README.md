@@ -3,7 +3,7 @@
 # Sound Reaver
 [![GitHub Workflow Build Status](https://img.shields.io/github/actions/workflow/status/sungaila/SoundReaver/dotnet.yml?event=push&style=flat&logo=github&logoColor=white)](https://github.com/sungaila/SoundReaver/actions/workflows/dotnet.yml)
 [![SonarCloud Quality Gate](https://img.shields.io/sonar/quality_gate/sungaila_SoundReaver?server=https%3A%2F%2Fsonarcloud.io&style=flat&logo=sonarqubecloud&logoColor=white)](https://sonarcloud.io/dashboard?id=sungaila_SoundReaver)
-[![Weblate translation status](https://hosted.weblate.org/widget/soundreaver/svg-badge.svg)](https://hosted.weblate.org/engage/soundreaver/)
+[![Weblate project translated](https://img.shields.io/weblate/progress/soundreaver?server=https%3A%2F%2Fhosted.weblate.org&style=flat&logo=weblate&logoColor=white)](https://hosted.weblate.org/engage/soundreaver/)
 
 Plays the soundtrack of [Legacy of Kain: Soul Reaver](https://en.wikipedia.org/wiki/Legacy_of_Kain:_Soul_Reaver) with a toggle to switch between the spectral and material variant of each track.
 
