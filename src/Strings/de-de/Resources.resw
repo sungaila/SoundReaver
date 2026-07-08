@@ -429,12 +429,24 @@
   <data name="UpdateAvailableContentDialogTitle" xml:space="preserve">
     <value>Update verfügbar</value>
   </data>
-	<data name="UpdateAvailableContentDialogContent" xml:space="preserve">
+  <data name="UpdateAvailableContentDialogContent" xml:space="preserve">
     <value>Das Update wird im Hintergrund installiert. Die App wird nach Abschluss automatisch neu gestartet.</value>
   </data>
-	<data name="DeploymentProgress" xml:space="preserve">
+  <data name="DeploymentProgress" xml:space="preserve">
     <value>{0} des Updates installiert.
 
 Die App wird nach Abschluss automatisch neu gestartet.</value>
+  </data>
+  <data name="FullscreenButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Vollbildmodus umschalten</value>
+  </data>
+  <data name="FullscreenButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Vollbild</value>
+  </data>
+  <data name="FullscreenButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Schaltet den Vollbildmodus ein oder aus.</value>
+  </data>
+  <data name="FullscreenButton.AccessKey" xml:space="preserve">
+    <value>F11</value>
   </data>
 </root>

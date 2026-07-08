@@ -1,4 +1,5 @@
 using CommunityToolkit.WinUI;
+using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -7,6 +8,7 @@ using Microsoft.UI.Xaml.Shapes;
 using Sungaila.SoundReaver.Manager;
 using Sungaila.SoundReaver.ViewModels;
 using System;
+using System.Linq;
 using Windows.Media.Playback;
 using Windows.System;
 using Windows.UI;
@@ -261,6 +263,27 @@ namespace Sungaila.SoundReaver.Views
 
             VolumeSlider.Focus(FocusState.Keyboard);
             args.Handled = true;
+        }
+
+        private void FullscreenButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (App.MainWindow!.AppWindow.Presenter?.Kind is not AppWindowPresenterKind kind)
+                return;
+
+            var isFullscreen = kind == AppWindowPresenterKind.FullScreen;
+
+            if (!isFullscreen)
+                FullscreenButton.KeyboardAccelerators.Add(new KeyboardAccelerator { Key = VirtualKey.Escape });
+            else if (FullscreenButton.KeyboardAccelerators.SingleOrDefault(k => k.Key == VirtualKey.Escape) is KeyboardAccelerator esc)
+                FullscreenButton.KeyboardAccelerators.Remove(esc);
+
+            FullscreenButtonFontIcon.Glyph = isFullscreen
+                ? "\uE740"
+                : "\uE73F";
+
+            App.MainWindow.AppWindow.SetPresenter(isFullscreen
+                ? AppWindowPresenterKind.Default
+                : AppWindowPresenterKind.FullScreen);
         }
     }
 }

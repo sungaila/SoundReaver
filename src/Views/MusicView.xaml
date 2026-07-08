@@ -181,6 +181,7 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
                 <ToggleButton x:Name="PlayButton"
@@ -248,7 +249,22 @@
                     </Button.Flyout>
                 </Button>
 
-                <Viewbox Grid.Column="5" Height="50">
+                <Button x:Name="FullscreenButton"
+                        x:Uid="FullscreenButton"
+                        Grid.Column="5"
+                        Width="50"
+                        Height="50"
+                        Click="FullscreenButton_Click"
+                        Style="{ThemeResource EllipsisButton}">
+                    <FontIcon x:Name="FullscreenButtonFontIcon"
+                              AutomationProperties.AccessibilityView="Raw"
+                              Glyph="&#xE740;" />
+                    <Button.KeyboardAccelerators>
+                        <KeyboardAccelerator Key="F11" />
+                    </Button.KeyboardAccelerators>
+                </Button>
+
+                <Viewbox Grid.Column="6" Height="50">
                     <ToggleSwitch x:Name="VariantToggleSwitch"
                                   x:Uid="VariantToggleSwitch"
                                   MinWidth="{x:Bind VariantToggleSwitch.Width, Mode=OneWay}"

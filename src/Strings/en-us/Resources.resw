@@ -437,4 +437,16 @@
 
 The app will restart automatically when it’s finished.</value>
   </data>
+	<data name="FullscreenButton.[using:Microsoft.UI.Xaml.Controls]ToolTipService.ToolTip" xml:space="preserve">
+    <value>Toggle full-screen mode</value>
+  </data>
+	<data name="FullscreenButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
+    <value>Full screen</value>
+  </data>
+	<data name="FullscreenButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.HelpText" xml:space="preserve">
+    <value>Turns full-screen mode on or off.</value>
+  </data>
+  <data name="FullscreenButton.AccessKey" xml:space="preserve">
+    <value>F11</value>
+  </data>
 </root>
