@@ -156,11 +156,44 @@
 		<PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.298" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
 		<PackageReference Include="Microsoft.WindowsAppSDK.AI" Version="2.2.3" ExcludeAssets="all" />
-		<PackageReference Include="Microsoft.WindowsAppSDK.ML" Version="2.1.70" ExcludeAssets="runtime;native;contentFiles" />
+		<PackageReference Include="Microsoft.WindowsAppSDK.ML" Version="2.1.70" IncludeAssets="build;buildTransitive" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.WindowsAppSDK.Widgets" Version="2.0.5" ExcludeAssets="all" />
 		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4078.44" ExcludeAssets="all" />
 	</ItemGroup>
+
+	<Target Name="RemoveWindowsMLRuntimeFromBuildOutput"
+        AfterTargets="ResolveReferences"
+        BeforeTargets="CopyFilesToOutputDirectory">
+
+		<ItemGroup>
+			<ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)"
+				Condition="'%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)' == 'onnxruntime.dll'
+				Or '%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)' == 'DirectML.dll'
+				Or '%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)' == 'Microsoft.Windows.AI.MachineLearning.dll'" />
+
+			<RuntimeCopyLocalItems Remove="@(RuntimeCopyLocalItems)"
+				Condition="'%(RuntimeCopyLocalItems.Filename)%(RuntimeCopyLocalItems.Extension)' == 'onnxruntime.dll'
+				Or '%(RuntimeCopyLocalItems.Filename)%(RuntimeCopyLocalItems.Extension)' == 'DirectML.dll'
+				Or '%(RuntimeCopyLocalItems.Filename)%(RuntimeCopyLocalItems.Extension)' == 'Microsoft.Windows.AI.MachineLearning.dll'" />
+
+			<NativeCopyLocalItems Remove="@(NativeCopyLocalItems)"
+				Condition="'%(NativeCopyLocalItems.Filename)%(NativeCopyLocalItems.Extension)' == 'onnxruntime.dll'
+				Or '%(NativeCopyLocalItems.Filename)%(NativeCopyLocalItems.Extension)' == 'DirectML.dll'
+				Or '%(NativeCopyLocalItems.Filename)%(NativeCopyLocalItems.Extension)' == 'Microsoft.Windows.AI.MachineLearning.dll'" />
+		</ItemGroup>
+	</Target>
+
+	<Target Name="RemoveWindowsMLRuntimeFromPublishOutput"
+        AfterTargets="ComputeFilesToPublish">
+
+		<ItemGroup>
+			<ResolvedFileToPublish Remove="@(ResolvedFileToPublish)"
+				Condition="'%(ResolvedFileToPublish.Filename)%(ResolvedFileToPublish.Extension)' == 'onnxruntime.dll'
+				Or '%(ResolvedFileToPublish.Filename)%(ResolvedFileToPublish.Extension)' == 'DirectML.dll'
+				Or '%(ResolvedFileToPublish.Filename)%(ResolvedFileToPublish.Extension)' == 'Microsoft.Windows.AI.MachineLearning.dll'" />
+		</ItemGroup>
+	</Target>
 
 	<!--
     Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
