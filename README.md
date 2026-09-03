@@ -24,4 +24,4 @@ This is a fan project. “Legacy of Kain”, “Soul Reaver” and related trade
 ## Help translate this app
 Found a typo or want to add support for another language? [Join the translation project on Weblate and help improve the app’s translations.](https://hosted.weblate.org/engage/soundreaver/)
 
-[![Weblate translation status](https://hosted.weblate.org/widget/soundreaver/multi-auto.svg)](https://hosted.weblate.org/engage/soundreaver/)
+[![Translation status](https://hosted.weblate.org/widget/soundreaver/matrix-auto.svg)](https://hosted.weblate.org/engage/soundreaver/)
